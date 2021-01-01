@@ -1,0 +1,33 @@
+.cm-card {
+    width: 100%;
+    height: 257px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+    &:first-child,
+    &:nth-child(2) {
+        margin-right: 12px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .central {
+        margin: 0 auto;
+    }
+
+    .cm-card {
+        @extend .central;
+        min-width: 270px;
+        width: 80%;
+        &:first-child,
+        &:nth-child(2) {
+            @extend .central;
+        }
+    }
+}
+
+@media screen and (max-width: 1149px) {
+    .cm-card {
+        max-width: max-content;
+    }
+}

@@ -1,0 +1,96 @@
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+.menu-call {
+    width: 100%;
+    @include flexible(center, flex-end);
+    flex-flow: column;
+    order: 0;
+    &__humburger {
+        order: -1;
+    }
+}
+
+@media screen and (max-width: 1149px) {
+    .menu-call {
+        &__humburger {
+            z-index: 999;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            background: #fff;
+            line-height: 0.6;
+            border: 2px solid #8ba4f9;
+            border-radius: 50%;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.24);
+            @include flexible(center, center);
+            &:focus {
+                outline: none;
+            }
+        }
+        &__shower {
+            position: relative;
+            display: inline-block;
+            width: 25px;
+            height: 2px;
+            background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+            &:focus {
+                outline: none;
+            }
+            &::before,
+            &::after {
+                position: absolute;
+                display: inline-block;
+                content: "";
+                width: 18px;
+                height: 2px;
+                background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+            }
+            &::before {
+                top: 0;
+                left: 0;
+                margin: -7px 3px;
+            }
+            &::after {
+                top: 0;
+                left: 0;
+                margin: 7px 3px;
+            }
+        }
+    }
+
+    .click > .menu-call__shower {
+        background: transparent;
+        &::before {
+            transform: rotate(45deg);
+            margin: 0 3px;
+        }
+        &::after {
+            transform: rotate(313deg);
+            margin: 0 3px;
+        }
+
+        &::before,
+        &::after {
+            transition: all 200ms;
+        }
+    }
+}
+
+.chevron-down {
+    &::after {
+        content: '\f107';
+        font-family: 'Font Awesome 5 Pro';
+        @include flexible(center, center);
+        width: 44px;
+        height: 44px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 24px;
+        color: rgba(31, 32, 65, 0.5);
+    }
+}

@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/*Относится к кнопке Вызова*/
+/*.menu-call {
+    position: relative;
+    width: 40px;
+    @include flexible(center, center);
+    order: -1;
+    &__humburger {
+        @include flexible(center, center);
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border: none;
+        padding: 0;
+        background: #fff;
+        line-height: 0.6;
+        border: 2px solid #8ba4f9;
+        border-radius: 50%;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.24);
+        &:focus {
+            outline: none;
+        }
+    }
+    &__shower {
+        position: relative;
+        width: 22px;
+        height: 2px;
+        background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+        padding-right: 1px;
+        &::before {
+            @include shower($before);
+        }
+        &::after {
+            @include shower($after);
+        }
+        &::before,
+        &::after {
+            width: 16px;
+            display: inline-block;
+            position: absolute;
+            content: "";
+            height: 2px;
+            background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+            transition: all 200ms;
+        }
+        &--animate {
+            background: transparent;
+            &::before {
+                @include animate($animate_before);
+            }
+            &::after {
+                @include animate($animate_after);
+            }
+            &::before,
+            &::after {
+                transition: all 200ms;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1149px) {
+    .menu-call {
+        width: 100%;
+    }
+
+    ul:not(.header__visible) {
+        & + .menu-call {
+            @include flexible(flex-end, center);
+        }
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .header__visible + .menu-call {
+        display: none;
+    }
+}*/
+/*# sourceMappingURL=button_caller.css.map */

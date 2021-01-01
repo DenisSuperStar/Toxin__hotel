@@ -1,0 +1,9 @@
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+.range-price {
+    @include flexible(center, center);
+}

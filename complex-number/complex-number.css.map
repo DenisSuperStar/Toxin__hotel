@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAMA,AAAA,eAAe,CAAC;EACZ,OAAO,EAAE,IAAI;CAChB;;AAED,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK,OAAO,SAAS,EAAE,MAAM;EACvD,AAAA,eAAe,CAAC;IAVhB,OAAO,EAAE,IAAI;IACb,eAAe,EAUO,UAAU;IAThC,WAAW,EASuB,MAAM;GACvC",
+    "sources": [
+        "complex-number.scss"
+    ],
+    "names": [],
+    "file": "complex-number.css"
+}

@@ -1,0 +1,59 @@
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+@mixin hidden {
+    position: absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+@mixin label {
+    display: block;
+    height: max-content;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+}
+
+.cm-checkbox {
+    display: flex;
+    &__input {
+        @include hidden();
+        &:checked + .cm-checkbox__fake {
+            &::after {
+                content: "\f00c";
+                font-family: 'Font Awesome 5 Pro';
+                position: absolute;
+                @include flexible(center, center);
+                width: 20px;
+                height: 20px;
+                color: #8ba4f9;
+                padding-right: 1px;
+            }
+        }
+    }
+    &__fake {
+        display: block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        box-sizing: border-box;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+    &__text {
+        @include label();
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: rgba(31, 32, 65, 0.5);
+        &--uniq {
+            width: 192px;
+        }
+    }
+}

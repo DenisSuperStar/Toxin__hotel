@@ -1,0 +1,53 @@
+/*Однотипные части внутреннего рисунка Логотипа*/
+
+$w_small: 11.76px;
+$h_small: $w_small;
+$radius_small: 0 100px 500px 100px;
+$liner_small: 2px solid #8ba4f9;
+$change_small: rotate(-70deg);
+$mt_small: 15.29px;
+$ml_small: 7.4px;
+
+@mixin content($width, $height, $radius, $liner, $change, $mt, $ml) {
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+    border-right: $liner;
+    transform: $change;
+    margin-top: $mt;
+    margin-left: $ml;
+}
+
+.wing--large {
+    @include content(
+        $w_small, 
+        $h_small, 
+        $radius_small, 
+        $liner_small, 
+        $change_small, 
+        $mt_small, 
+        $ml_small
+    );
+}
+
+$w_little: 9.12px;
+$h_little: $w_little;
+$radius_little: 0 100px 100px 0;
+$liner_little: 2px solid #66d2ea;
+$change_little: rotate(240deg);
+$mt_little: 14px;
+$ml_little: 20px;
+
+.wing--small {
+    @include content(
+        $w_little,
+        $h_little,
+        $radius_little,
+        $liner_little,
+        $change_little,
+        $mt_little,
+        $ml_little
+    );
+    position: absolute;
+    top: 0;
+}

@@ -1,0 +1,37 @@
+@mixin common {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+.forward-item {
+    color: rgba(31, 32, 65, 0.5);
+    font-weight: normal;
+    @include common();
+    &--long {
+        width: 245px;
+        height: 48px;
+        line-height: 22px;
+    }
+    &--last {
+        color: transparent;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .forward-item {
+        font-size: 16px;
+        &--long {
+            width: 100%;
+            @include flexible(center, center);
+            font-size: 16px;
+        }
+    }
+}

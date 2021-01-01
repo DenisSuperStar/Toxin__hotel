@@ -1,0 +1,12 @@
+@mixin review {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.5);
+}
+
+.count-reviews {
+   @include review();
+   font-weight: bold;
+}

@@ -1,0 +1,10 @@
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+.field {
+    @include flexible(center, center);
+    flex-wrap: wrap;
+}

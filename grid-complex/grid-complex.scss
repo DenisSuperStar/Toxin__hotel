@@ -1,0 +1,10 @@
+.grid-complex {
+    display: flex;
+}
+
+@media screen and (max-width: 950px) {
+    .grid-complex {
+        display: flex;
+        flex-flow: column;
+    }
+}

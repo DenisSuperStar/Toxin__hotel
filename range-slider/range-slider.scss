@@ -1,0 +1,96 @@
+@mixin reset {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+@mixin hidden {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+}
+
+.range-slider {
+    display: flex;
+    flex-flow: column;
+    width: max-content;
+    & .range-box {
+        &__input  {
+            @include reset();
+            border-radius: 3px; 
+        }
+    }
+}
+
+.range-box {
+    width: 100%;
+    display: flex;
+    &__piece {
+        width: 100%;
+        position: relative;
+        @include flexible(center, center);
+        flex-flow: column;  
+    }
+    &__input {
+        width: 100%;
+        @include reset();
+        @include hidden();
+        height: 6px;
+        background: linear-gradient(180deg, #6fcf97 0, #66d2ea 100%);
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        transition: opacity .2s;
+        cursor: pointer;
+        &:focus {
+            outline: none; 
+        }
+        &::-webkit-slider-thumb {
+            display: block;
+            @include hidden();
+            opacity: 0.7;
+            background: linear-gradient(180deg, #6fcf97 0, #66d2ea 100%);
+            width: 12px;
+            height: 12px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
+    }
+    &__piece--start {
+        & .range-box__input {
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            border-right: none;
+        }
+    }
+    &__piece--end {
+        & .range-box__input {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            border-left: none;
+        }
+    }
+    &__state {
+        margin: 0;
+        background: rgba(31, 32, 65, 0.75);
+        color: #fff;
+        width: 50px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        order: -1;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        border-radius: 4px;
+        position: absolute;
+        left: 0;
+        margin-left: 20px;
+        opacity: 0.3;
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAMA,AAAA,YAAY,CAAC;EALT,OAAO,EAAE,IAAI;EACb,eAAe,EAKG,MAAM;EAJxB,WAAW,EAIe,MAAM;CACnC",
+    "sources": [
+        "range-price.scss"
+    ],
+    "names": [],
+    "file": "range-price.css"
+}

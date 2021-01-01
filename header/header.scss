@@ -1,0 +1,24 @@
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+.header {
+    @include flexible(space-between, center);
+    padding: 15px 130px 15px 140px;
+    min-width: 320px;
+}
+
+@media screen and (max-width: 1149px) {
+    .header {
+        @include flexible(space-between, flex-start);
+        padding: 15px 24px;
+    }
+}
+
+@media screen and (min-width: 1150px) and (max-width: 1300px) {
+    .header {
+        padding: 15px 24px 15px 140px;
+    }
+}

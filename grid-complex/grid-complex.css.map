@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACV,OAAO,EAAE,IAAI;CAChB;;AAED,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EAC/B,AAAA,aAAa,CAAC;IACV,OAAO,EAAE,IAAI;IACb,SAAS,EAAE,MAAM;GACpB",
+    "sources": [
+        "grid-complex.scss"
+    ],
+    "names": [],
+    "file": "grid-complex.css"
+}

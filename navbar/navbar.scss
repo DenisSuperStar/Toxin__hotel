@@ -1,0 +1,115 @@
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+.visually {
+    display: none;
+}
+
+.root-list {
+    &__link {
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(31, 32, 65, 0.5);
+        padding: 0;
+        cursor: pointer;
+        @include flexible(center, center);
+        &:hover {
+            text-decoration: none;
+            color: rgba(31, 32, 65, 0.5);
+        }
+    }
+}
+
+@media screen and (max-width: 1149px) {
+    .visually {
+        display: flex;
+    }
+
+    .root-list {
+        display: block;
+        &--visible {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1149px) {
+    .root-list {
+        position: absolute;
+        top: 0;
+        margin-top: 100px;
+        z-index: 99999;
+        background: #fff;
+        border: 2px solid #8ba4f9;
+        border-radius: 4px;
+        padding: 10px;
+        &__item {
+            width: 100%;
+            height: 44px;
+            margin-right: 0;
+            margin-bottom: 20px;
+            @include flexible(center, center);
+            &:nth-child(6),
+            &:last-child {
+                border-radius: 22px;
+                width: 200px;
+                .root-list__link {
+                    font-weight: bold;
+                    font-size: 12px;
+                    line-height: 15px;
+                    text-transform: uppercase;
+                }
+            }
+            &:nth-child(6) {
+                background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+                border: none;
+                & > .root-list__link {
+                    color: #fff;
+                }
+            }
+            &:last-child {
+                background: #fff;
+                border: 2px solid #bc9cff;
+                & > .root-list__link {
+                    color: #bc9cff;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .invisible,
+    .visually {
+        display: none;
+    }
+
+    .root-list {
+        display: flex !important;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        &__item {
+            display: flex;
+            margin-right: 20px;
+            width: max-content;
+            height: max-content;
+            &:nth-child(6) {
+                @extend .invisible;
+            }
+            &:last-child {
+                @extend .invisible;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
