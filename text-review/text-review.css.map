@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAQA,AAAA,aAAa,CAAC;EAPV,WAAW,EAAE,wBAAwB;EACrC,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,IAAI;EACjB,KAAK,EAAE,qBAAqB;EAK5B,WAAW,EAAE,MAAM;CACtB",
+    "sources": [
+        "text-review.scss"
+    ],
+    "names": [],
+    "file": "text-review.css"
+}
