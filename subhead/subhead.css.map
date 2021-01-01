@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": ";AAAA,0CAA0C;AAC1C,AAAA,QAAQ,CAAC;EACL,WAAW,EAAE,wBAAwB;EACrC,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,IAAI;EACjB,cAAc,EAAE,SAAS;EACzB,KAAK,EAAE,OAAO;CACjB",
+    "sources": [
+        "subhead.scss"
+    ],
+    "names": [],
+    "file": "subhead.css"
+}

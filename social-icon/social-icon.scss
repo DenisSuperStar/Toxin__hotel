@@ -1,0 +1,27 @@
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+.social-icon {
+    font-family: 'Font Awesome 5 Brands';
+    width: 24px;
+    height: 24px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 23px;
+    color: #8ba4f9;
+    @include flexible(center, center);
+    cursor: pointer;
+    &--tw::after {
+        content: '\f099';
+    }
+    &--fb::after {
+        content: '\f082';
+    }
+    &--vk::after {
+        content: '\f16d';
+    }
+}

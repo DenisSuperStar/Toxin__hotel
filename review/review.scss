@@ -1,0 +1,16 @@
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+.reviews {
+    display: flex;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+    .reviews {
+        width: 100%;
+        @include flexible(flex-end, center);
+    }
+}

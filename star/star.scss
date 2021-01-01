@@ -1,0 +1,25 @@
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+.star {
+    &::after {
+        content: "\f005";
+        font-family: "Font Awesome 5 Pro";
+        width: 24px;
+        height: 24px;
+        @include flexible(center, center);
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 20px;
+        color: #8baff9;  
+    }
+    &--active {
+        &::after {
+            font-weight: bold;
+        }
+    }
+}
