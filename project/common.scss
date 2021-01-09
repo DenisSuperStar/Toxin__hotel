@@ -388,3 +388,79 @@
         }
     }
 }
+
+.modal-body {
+    &__form-self {
+        width: 100%;
+        height: 100%;
+        @include flexible(center, center);
+    }
+}
+
+.form {
+    &__wrapper-first-name {
+        padding-top: 20px;
+    }
+    &__wrapper-last-name {
+        padding-top: 10px;
+    }
+    &__select-gender {
+        @include flexible(space-between, center);
+        padding-top: 10.44px;
+        padding-bottom: 23.56px;
+    }
+    &__wrapp-radio {
+        &:first-child {
+            width: 100px;
+            margin-right: 20px;
+        }
+        &:last-child {
+            width: 70%;
+        }
+    }
+    &__wrapper-label {
+        padding-bottom: 5px;
+    }
+    &__wrapper-title,
+    &__wrapper-pass,
+    &__wrapper-password,
+    &__getting-date {
+        padding-bottom: 20px;
+    }
+    &__wrapper-email {
+        padding-bottom: 10px;
+    }
+    &__wrapper-switch {
+        display: flex;
+        padding-bottom: 24px;
+    }
+    &__wrapper-descript {
+        padding-left: 10px;
+    }
+    &__wrapp-has-acc {
+        @include flexible(space-between, center);
+        padding-top: 30px;
+    }
+    &__wrapp-create-acc {
+        @include flexible(space-between, center);
+        padding-top: 30px;
+    }
+}
+
+/*Анимация модальных окон*/
+.hidden {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.rise-modal {
+    transform: scale(1) !important;
+    transition: transform 0.5s ease-in-out !important;
+}
+
+.rise-dialog {
+    transform: scale(1) !important;
+    transition: transform 0.5s ease-in-out !important;
+}

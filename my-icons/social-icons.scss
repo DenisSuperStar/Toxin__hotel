@@ -1,0 +1,57 @@
+.remove-underline {
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex !important;
+    background: #fff;
+    margin: 0;
+    list-style: none;
+    &__item {
+        display: block;
+        margin-right: 20px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__link {
+        @extend .remove-underline;
+        &:hover {
+            @extend .remove-underline;
+        }
+    }
+    &__item {
+        & .social-icons__link:hover {
+            & .social-icon::after {
+                color: #fff;
+                padding: 20px;
+                background: #8ba4f9;
+                border-radius: 2px;
+                transition: all 0.5s ease-in-out;
+                animation: jelly 0.75s ease forwards;
+            }
+        }
+    }
+}
+
+@keyframes jelly {
+    0%, 20% {
+        transform: scale(1);
+        border-radius: 40px;
+        background: #8ba4f9;
+    }
+    30% {
+        transform: scale(1.2);
+    }
+    40% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+        border-radius: 10px;
+    }
+    60%, 100% {
+        transform: scale(1);
+        border-radius: 5px;
+    }
+}
