@@ -11,43 +11,48 @@
     -moz-appearance: none;
 }
 
-@mixin label {
-    display: block;
-    height: max-content;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-}
-
 .cm-checkbox {
     display: flex;
     &__input {
         @include hidden();
         &:checked + .cm-checkbox__fake {
+            border-color: #bc9cff;
+            animation: jellybox 0.75s ease;
             &::after {
-                content: "\f00c";
-                font-family: 'Font Awesome 5 Pro';
-                position: absolute;
-                @include flexible(center, center);
-                width: 20px;
-                height: 20px;
-                color: #8ba4f9;
-                padding-right: 1px;
+                opacity: 1;
+                transform: rotate(45deg) scale(1);
             }
         }
     }
     &__fake {
-        display: block;
+        @include flexible(center, baseline);
         position: relative;
         width: 20px;
         height: 20px;
+        border: 1px solid #bc9cff;
         background: #fff;
-        border: 1px solid rgba(31, 32, 65, 0.25);
         box-sizing: border-box;
+        padding-top: 4px;
         border-radius: 4px;
         margin-right: 10px;
+        cursor: pointer;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 8px;
+            opacity: 0;
+            transform: rotate(45deg) scale(0);
+            border-right: 2px solid #8ba4f9;
+            border-bottom: 2px solid #8ba4f9;
+            transition: all 0.5s ease-in-out;
+            transition-delay: 0.15s;
+        }
     }
     &__text {
-        @include label();
+        height: max-content;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
         font-weight: bold;
         font-size: 14px;
         line-height: 18px;
@@ -55,5 +60,29 @@
         &--uniq {
             width: 192px;
         }
+    }
+}
+
+@keyframes jellybox {
+    0% {
+        transform: scale(1, 1);
+    }
+    30% {
+        transform: scale(1.25, 0.75);
+    }
+    40% {
+        transform: scale(0.75, 1.25);
+    }
+    50% {
+        transform: scale(1.15, 0.85);
+    }
+    65% {
+        transform: scale(0.95, 1.05);
+    }
+    75% {
+        transform: scale(1.05, 0.95);
+    }
+    100% {
+        transform: scale(1, 1);
     }
 }
