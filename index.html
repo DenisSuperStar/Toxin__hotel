@@ -37,7 +37,6 @@
     <link rel="stylesheet" href="./navbar/navbar.css">
     <link rel="stylesheet" href="./sign-in/sign-in.css">
     <link rel="stylesheet" href="./sign-up/sign-up.css">
-    <link rel="stylesheet" href="./caller/button_caller.css">
     <link rel="stylesheet" href="./content/content.css">
     <link rel="stylesheet" href="./sidebar/sidebar.css">
     <link rel="stylesheet" href="./subhead/subhead.css">
@@ -74,7 +73,172 @@
     <link rel="stylesheet" href="./email/email.css">
     <link rel="stylesheet" href="./label/label.css">
     <link rel="stylesheet" href="./copyright/copyright.css ">
+    <link rel="stylesheet" href="./my-icons/social-icons.css">
     <link rel="stylesheet" href="./social-icon/social-icon.css">
+    <link rel="stylesheet" href="./input/input-data.css">
+    <link rel="stylesheet" href="./overlay/overlay.css">
+    <link rel="stylesheet" href="./modal-window/modal-window.css">
+    <link rel="stylesheet" href="./modal-body/modal-body.css">
+    <link rel="stylesheet" href="./form/form.css">
+    <link rel="stylesheet" href="./form-title/form-title.css">
+    <link rel="stylesheet" href="./switch/switch.css">
+    <style>
+        .my-radio {
+            position: relative;
+            display: flex;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #bc9cff;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        .my-radio__real {
+            appearance: none;
+        }
+
+        .my-radio__visibility {
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 3px 0 0 3px;
+        }
+
+        .my-radio__visibility::before {
+            display: block;
+            content: "";
+            width: 12px;
+            height: 12px;
+            border: none;
+            background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+            border-radius: 10px;
+        }
+
+        .my-radio__wrapper-text {
+            margin-left: calc(18px + 10px);
+        }
+
+        .text-description {
+            width: max-content;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(31, 32, 65, 0.75);
+        }
+
+        .label-field {
+            text-transform: uppercase;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .description {
+            width: max-content;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(31, 32, 65, 0.75);
+        }
+
+        .my-button {
+            width: 320px;
+            height: 44px;
+            background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+            border-radius: 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .my-button-text {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            text-transform: uppercase;
+            color: #fff;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 45px;
+        }
+
+        .my-button-icon::after {
+            content: "\f061";
+            font-family: 'Font Awesome 5 Pro';
+            color: #fff;
+            font-size: 24px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .account-yet-text {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+            color: #000;
+        }
+
+        .action {
+            width: 99px;
+            height: 44px;
+            background: #fff;
+            border: 2px solid #bc9cff;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+            border-radius: 22px;
+            text-transform: uppercase;
+            box-sizing: border-box;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            color: #bc9cff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .sign-up--action {
+            width: 100%;
+        }
+
+        @media screen and (min-width: 1150px) { /*Временный стиль*/
+            .menu-call__humburger {
+                display: none;
+            }
+        }
+
+        .fullwidth-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+        }
+
+        .form {
+            height: max-content;
+            z-index: 1000;
+        }
+    </style>
 </head>
     <body class="page">
         <header class="header">
@@ -119,7 +283,7 @@
                         </div>
                         <div class="sidebar__wrapper sidebar__wrapper--range">
                             <div class="subhead">диапазон цены</div>
-                            <div class="range-price" style="display: flex;">
+                            <div class="range-price" style="display: flex;"> <!-- -->
                                 <div class="self-price">
                                     5000
                                 </div>
@@ -149,6 +313,7 @@
                                     <div class="subhead">правила дома</div>
                                 </div>
                                 <div class="sidebar__elembox">
+                                    <!---->
                                     <label class="cm-checkbox">
                                         <input type="checkbox" class="cm-checkbox__input" checked>
                                         <span class="cm-checkbox__fake"></span>
@@ -473,7 +638,7 @@
                                     <div class="card cm-card">
                                         <div class="card-slider">
                                             <div class="card-slider__item">
-                                                <img src="./slider/assets/assets/images__21/room444.png" class="card-slider__img" alt="room444"> 
+                                                <img src="./slider/assets/assets/images__21/room444.png" class="card-slider__img" alt="room444">
                                             </div>
                                             <div class="card-slider__item">
                                                 <img src="./slider/assets/assets/images__21/room450.png" class="card-slider__img" alt="room450">
@@ -597,7 +762,7 @@
                                     <div class="card cm-card">
                                         <div class="card-slider">
                                             <div class="card-slider__item">
-                                                <img src="./slider/assets/assets/images__13/room678.png" class="card-slider__img" alt="room678"> 
+                                                <img src="./slider/assets/assets/images__13/room678.png" class="card-slider__img" alt="room678">
                                             </div>
                                             <div class="card-slider__item">
                                                 <img src="./slider/assets/assets/images__13/room666.png" class="card-slider__img" alt="room666">
@@ -780,7 +945,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- -->
                             </div>
                         </div>
                     </div>
@@ -880,7 +1044,7 @@
                 <div class="rectangle__copybox">
                     <div class="copyright">Copyright &#169; 2018 Toxin отель. Все права защищены</div>
                 </div>
-                <div class="icon__wrapper">
+                <!--<div class="icon__wrapper">
                     <div class="icon__box">
                         <div class="social-icon social-icon--tw"></div>
                     </div>
@@ -890,9 +1054,136 @@
                     <div class="icon__box">
                         <div class="social-icon social-icon--vk"></div>
                     </div>
-                </div>
+                </div> -->
+                <ul class="social-icons">
+                    <li class="social-icons__item">
+                        <a href="www.google.com" class="social-icons__link">
+                            <span class="social-icon social-icon--tw"></span>
+                        </a>
+                    </li>
+                    <li class="social-icons__item">
+                        <a href="www.google.com" class="social-icons__link">
+                            <span class="social-icon social-icon--fb"></span>
+                        </a>
+                    </li>
+                    <li class="social-icons__item">
+                        <a href="www.google.com" class="social-icons__link">
+                            <span class="social-icon social-icon--vk"></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </footer>
+        <div class="modal-background hidden"></div>
+        <div class="modal-window hidden" id="sign-in">
+            <div class="modal-body">
+                <img src="./assets/image 4.png" class="fullwidth-screen">
+                <div class="modal-body__form-self">
+                    <form class="form form--long">
+                        <div class="form__content">
+                            <div class="form__wrapper-title">
+                                <span class="title">Регистрация аккаунта</span>
+                            </div>
+                            <div class="form__wrapper-first-name">
+                                <input type="text" class="input-data" placeholder="Имя">
+                            </div>
+                            <div class="form__wrapper-last-name">
+                                <input type="text" class="input-data" placeholder="Фамилия">
+                            </div>
+                            <div class="form__select-gender">
+                                <div class="form__wrapp-radio">
+                                    <div class="my-radio">
+                                        <input type="radio" class="my-radio__real visible" checked="checked">
+                                        <div class="my-radio__visibility"></div>
+                                        <div class="my-radio__wrapper-text">
+                                            <div class="text-description">Мужчина</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form__wrapp-radio">
+                                    <div class="my-radio">
+                                        <input type="radio" class="my-radio__real visible" checked="checked">
+                                        <div class="my-radio__visibility"></div>
+                                        <div class="my-radio__wrapper-text">
+                                            <div class="text-description">Женщина</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__wrapper-label">
+                                <div class="label-field">Дата рождения</div>
+                            </div>
+                            <div class="form__getting-date">
+                                <input type="date" class="input-data" placeholder="ДД.ММ.ГГГГ">
+                            </div>
+                            <div class="label-field">Данные для входа в сервис</div>
+                            <div class="form__wrapper-email">
+                                <input type="email" class="input-data" placeholder="Email">
+                            </div>
+                            <div class="form__wrapper-password">
+                                <input type="text" class="input-data" placeholder="Пароль">
+                            </div>
+                            <div class="form__wrapper-switch">
+                                <div class="switch">
+                                    <input type="checkbox" class="switch__invisibility">
+                                    <span class="switch__slider switch__slider--round"></span>
+                                </div>
+                                <div class="form__wrapper-descript">
+                                    <div class="text-description">Получать спецпредложения</div>
+                                </div>
+                            </div>
+                            <div class="my-button">
+                                <div class="my-button-text">Перейти к оплате</div>
+                                <div class="my-button-icon"></div>
+                            </div>
+                            <div class="form__wrapp-has-acc">
+                                <div class="account-yet-text">Уже есть аккаунт на Toxin</div>
+                                <button type="submit" class="action sign-in">Войти</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-window hidden" id="sign-up">
+            <div class="modal-body">
+                <img src="./assets/image 4.png" class="fullwidth-screen ">
+                <div class="modal-body__form-self">
+                    <form action="#" class="form form--short">
+                        <div class="form__content">
+                            <div class="form__wrapper-title">
+                                <span class="title">Войти</span>
+                            </div>
+                            <div class="form__wrapper-email">
+                                <input
+                                    type="email"
+                                    class="input-data"
+                                    placeholder="Email"
+                                    name="email" size="20"
+                                    pattern=".+@google.com"
+                                    required
+                                >
+                            </div>
+                            <div class="form__wrapper-pass">
+                                <input
+                                    type="password"
+                                    class="input-data"
+                                    placeholder="Пароль"
+                                    name="password"
+                                    minlength="8"
+                                    required
+                                >
+                            </div>
+                            <button type="submit" class="sign-up sign-up--action">Войти</button>
+                            <div class="form__wrapp-create-acc">
+                                <div class="account-yet-text">Нет аккаунта на Toxin?</div>
+                                <button type="submit" class="sign-in account">Создать</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <!-- Подключение скриптов компонента "Меню" -->
         <!-- <script src="menu/menu.js"></script> -->
         <!-- Подключение скриптов компонента "Селект" -->
@@ -908,5 +1199,67 @@
         <script src="./carousel_init.js"></script>
         <script src="menu-piece/menu-piece.js"></script>
         <script src="range-slider/range-slider_js.js"></script>
+        <script>
+            const enter = document.querySelector('.header__entrance');
+            const overlay = document.querySelector('.modal-background');
+
+            const dialogOpen = function(event) {
+                if (event.target.nodeName == 'BUTTON') {
+                    
+                    if (event.target.classList.contains('sign-in')) {
+                        const class_name = event.target.className.substr(0, 7);
+                        const dialog = document.querySelector(`#${class_name}`);
+                        overlay.classList.remove('hidden');
+                        dialog.classList.remove('hidden');
+                        
+                        const body = dialog.querySelector(`#${class_name} .modal-body`);
+                        body.classList.add('rise-modal');
+
+                        const form = dialog.querySelector(`#${class_name} .form`);
+                        form.classList.add('rise-dialog');
+
+                    } else if (event.target.classList.contains('sign-up')) {
+                        const class_name = event.target.className.substr(0, 7);
+                        const dialog = document.querySelector(`#${class_name}`);
+                        overlay.classList.remove('hidden');
+                        dialog.classList.remove('hidden');
+
+                        const body = document.querySelector(`#${class_name} .modal-body`);
+                        body.classList.add('rise-modal');
+
+                        const form = dialog.querySelector(`#${class_name} .form`);
+                        form.classList.add('rise-dialog');
+
+                    }
+                } else return;
+            }
+
+            const dialogClose = function() {
+                const dialogs = Array.from(document.querySelectorAll('.modal-window'));
+
+                for (let window of dialogs) {
+                    if (!window.classList.contains('hidden')) {
+                        window.classList.add('hidden');
+                        overlay.classList.add('hidden');
+                    }
+                }
+            }
+
+            enter.addEventListener('click', dialogOpen);
+            overlay.addEventListener('click', dialogClose);
+            /*
+                1) Сделать подпункты меню, меню 3-го уровня
+                2) Сделать адаптивный шрифт, списать формулы
+                3)
+                3.1) В модальном окне "Войти" доработать функционал радио кнопок
+                3.2) Написать или использовать либу для поля ввода с календарем
+                4) Написать работающую пагинацию
+                5) Заменить реализацию карточек с флексбокс на грид
+                6) Эффект вдавливания и блика для кнопок
+                7) Сделать анимацию текста при скролле
+                8) Анимацию изображений
+                9) Для текстовых полей написать readMoreReadLess
+            */
+        </script>
     </body>
 </html>
