@@ -6,7 +6,7 @@
 
 .header {
     @include flexible(space-between, center);
-    padding: 15px 130px 15px 140px;
+    padding: 15px 140px 15px 140px;
     min-width: 320px;
 }
 
@@ -17,8 +17,8 @@
     }
 }
 
-@media screen and (min-width: 1150px) and (max-width: 1300px) {
+@media screen and (min-width: 1150px) and (max-width: 1399px) {
     .header {
-        padding: 15px 24px 15px 140px;
+        padding: 15px 24px 15px 24px;
     }
 }
