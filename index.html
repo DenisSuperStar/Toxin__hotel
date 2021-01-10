@@ -35,8 +35,7 @@
     <link rel="stylesheet" href="./text-logo/text-logo.css">
     <link rel="stylesheet" href="./menu-piece/menu-piece.css">
     <link rel="stylesheet" href="./navbar/navbar.css">
-    <link rel="stylesheet" href="./sign-in/sign-in.css">
-    <link rel="stylesheet" href="./sign-up/sign-up.css">
+    <link rel="stylesheet" href="./btn/btn.css">
     <link rel="stylesheet" href="./content/content.css">
     <link rel="stylesheet" href="./sidebar/sidebar.css">
     <link rel="stylesheet" href="./subhead/subhead.css">
@@ -258,10 +257,10 @@
             </div>
             <div class="header__entrance">
                 <div class="header__sign-in">
-                    <button class="sign-in">Войти</button>
+                    <button class="btn btn--sign-in">Войти</button>
                 </div>
                 <div class="header__sign-up">
-                    <button class="sign-up">Зарегистрироваться</button>
+                    <button class="btn btn--sign-up">Зарегистрироваться</button>
                 </div>
             </div>
         </header>
@@ -380,7 +379,7 @@
                         </div>
                     </div>
                     <div class="grid">
-                        <div class="content__wrapper">
+                        <div class="grid__content-wrapper">
                             <h4 class="subtitle">
                                 Номера, которые мы для вас подобрали
                             </h4>
@@ -391,7 +390,7 @@
                                     <div class="card cm-card">
                                         <div class="card-slider">
                                             <div class="card-slider__item">
-                                                <img src="./slider/assets/assets/images/room888.png" class="card-slider__img" alt="room888"> 
+                                                <img src="./slider/assets/assets/images/room888.png" class="card-slider__img" alt="room888">
                                             </div>
                                             <div class="card-slider__item">
                                                 <img src="./slider/assets/assets/images/room856.png" class="card-slider__img" alt="room856">
@@ -510,7 +509,7 @@
                                     </div>
                                 </div>
                                 <div class="field__wrapper">
-                                    <div class="card cm-card">
+                                    <div class="card cm-card cm-card--last">
                                         <div class="card-slider">
                                             <div class="card-slider__item">
                                                 <img src="./slider/assets/assets/images__23/room444.png" class="card-slider__img" alt="room444">
@@ -696,7 +695,7 @@
                                     </div>
                                 </div>
                                 <div class="field__wrapper">
-                                    <div class="card cm-card">
+                                    <div class="card cm-card cm-card--last">
                                         <div class="card-slider">
                                             <div class="card-slider__item">
                                                 <img src="./slider/assets/assets/images__24/image__441.jpg" class="card-slider__img" alt="room441">
@@ -885,7 +884,7 @@
                                 <!-- -->
                                 <!-- Обертка для карточки -->
                                 <div class="field__wrapper">
-                                    <div class="card cm-card">
+                                    <div class="card cm-card cm-card--last">
                                         <div class="card-slider">
                                             <div class="card-slider__item">
                                                 <img src="./slider/assets/assets/images__31/image311.jpg" class="card-slider__img" alt="room311">
@@ -1075,7 +1074,7 @@
             </div>
         </footer>
         <div class="modal-background hidden"></div>
-        <div class="modal-window hidden" id="sign-in">
+        <div class="modal-window hidden" id="btn--sign-in">
             <div class="modal-body">
                 <img src="./assets/image 4.png" class="fullwidth-screen">
                 <div class="modal-body__form-self">
@@ -1138,14 +1137,14 @@
                             </div>
                             <div class="form__wrapp-has-acc">
                                 <div class="account-yet-text">Уже есть аккаунт на Toxin</div>
-                                <button type="submit" class="action sign-in">Войти</button>
+                                <button type="submit" class="action btn btn--sign-in">Войти</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="modal-window hidden" id="sign-up">
+        <div class="modal-window hidden" id="btn--sign-up">
             <div class="modal-body">
                 <img src="./assets/image 4.png" class="fullwidth-screen ">
                 <div class="modal-body__form-self">
@@ -1174,10 +1173,15 @@
                                     required
                                 >
                             </div>
-                            <button type="submit" class="sign-up sign-up--action">Войти</button>
+                            <div class="form__wrapp-btn">
+                                <button class="btn btn--sign-up btn--action">Войти</button>
+                                <div class="form__wrapp-btn-icon">
+                                    <div class="my-button-icon"></div>
+                                </div>
+                            </div>
                             <div class="form__wrapp-create-acc">
                                 <div class="account-yet-text">Нет аккаунта на Toxin?</div>
-                                <button type="submit" class="sign-in account">Создать</button>
+                                <button type="submit" class="btn btn--sign-in account">Создать</button>
                             </div>
                         </div>
                     </form>
@@ -1205,21 +1209,34 @@
 
             const dialogOpen = function(event) {
                 if (event.target.nodeName == 'BUTTON') {
-                    
-                    if (event.target.classList.contains('sign-in')) {
-                        const class_name = event.target.className.substr(0, 7);
+                    if (event.target.classList.contains('btn--sign-in')) {
+                        const current_classes = event.target.className.split(' ');
+
+                        for (let current of current_classes) {
+                            if (current == 'btn--sign-in') {
+                                var class_name = current;
+                            }
+                        }
+
                         const dialog = document.querySelector(`#${class_name}`);
                         overlay.classList.remove('hidden');
                         dialog.classList.remove('hidden');
-                        
+
                         const body = dialog.querySelector(`#${class_name} .modal-body`);
                         body.classList.add('rise-modal');
 
                         const form = dialog.querySelector(`#${class_name} .form`);
                         form.classList.add('rise-dialog');
 
-                    } else if (event.target.classList.contains('sign-up')) {
-                        const class_name = event.target.className.substr(0, 7);
+                    } else if (event.target.classList.contains('btn--sign-up')) {
+                        const current_classes = event.target.className.split(' ');
+
+                        for (let current of current_classes) {
+                            if (current == 'btn--sign-up') {
+                                var class_name = current;
+                            }
+                        }
+
                         const dialog = document.querySelector(`#${class_name}`);
                         overlay.classList.remove('hidden');
                         dialog.classList.remove('hidden');
@@ -1229,7 +1246,6 @@
 
                         const form = dialog.querySelector(`#${class_name} .form`);
                         form.classList.add('rise-dialog');
-
                     }
                 } else return;
             }
@@ -1255,7 +1271,7 @@
                 3.2) Написать или использовать либу для поля ввода с календарем
                 4) Написать работающую пагинацию
                 5) Заменить реализацию карточек с флексбокс на грид
-                6) Эффект вдавливания и блика для кнопок
+                6)  Эффект блика для кнопок
                 7) Сделать анимацию текста при скролле
                 8) Анимацию изображений
                 9) Для текстовых полей написать readMoreReadLess
