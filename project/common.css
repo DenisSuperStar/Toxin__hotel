@@ -71,7 +71,7 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 104px 130px 100px 140px;
+  padding: 104px 140px 100px 140px;
 }
 
 .rectangle--tight {
@@ -85,7 +85,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 26px 130px 26px 0;
+  padding: 26px 140px 26px 0;
 }
 
 .rectangle__logo {
@@ -191,20 +191,24 @@
   }
 }
 
-@media screen and (min-width: 1150px) and (max-width: 1300px) {
+@media screen and (min-width: 1150px) and (max-width: 1399px) {
   .rectangle__container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    padding: 104px 0 104px 140px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 104px 24px 100px 24px;
   }
   .rectangle--tight {
     padding-right: 24px;
+  }
+  .rectangle--copybox {
+    padding-left: 24px;
   }
 }
 
@@ -221,20 +225,8 @@
   }
 }
 
-@media screen and (min-width: 951px) and (max-width: 1300px) {
-  div.field__line {
-    padding-right: 24px;
-  }
-}
-
 .forward-list__wrapper {
   padding-bottom: 20px;
-}
-
-@media screen and (max-width: 767px) {
-  /*В этом месте надо для особо класса указать стиль
-        Убрать отступ в списке
-    */
 }
 
 .space, .cm-card-body__relation, .cm-card-body__contain, .field__line {
@@ -308,17 +300,22 @@
   }
 }
 
-.content__wrapper {
-  text-align: center;
+.grid__content-wrapper {
+  text-align: left;
   margin-right: 250px;
   padding-bottom: 21px;
 }
 
 @media screen and (max-width: 767px) {
-  .content__wrapper {
-    text-align: center;
+  .grid__content-wrapper {
     margin: 0;
-    padding: 21px 28px 21px 28px;
+    padding: 21px 28px;
+  }
+}
+
+@media screen and (min-width: 951px) and (max-width: 1300px) {
+  .grid__content-wrapper {
+    margin-right: 0;
   }
 }
 
@@ -519,6 +516,18 @@
 
 .form__wrapper-email {
   padding-bottom: 10px;
+}
+
+.form__wrapp-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form__wrapp-btn-icon {
+  position: absolute;
+  right: 0;
+  padding-right: 30px;
 }
 
 .form__wrapper-switch {

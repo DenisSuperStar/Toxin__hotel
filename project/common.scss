@@ -56,12 +56,12 @@
 .rectangle {
     &__container {
         @include flexible(space-between, flex-start);
-        padding: 104px 130px 100px 140px;
+        padding: 104px 140px 100px 140px;
     }
     &--tight {
         border: none;
         @include flexible(space-between, center);
-        padding: 26px 130px 26px 0;
+        padding: 26px 140px 26px 0;
     }
     &__logo {
         @include flexible(normal, center);
@@ -121,8 +121,8 @@
         &__list {
             margin-right: 10px;
             &:last-child {
-                margin-right: 0; 
-            } 
+                margin-right: 0;
+            }
         }
         &__copybox {
             padding-left: 24px;
@@ -146,14 +146,17 @@
     }
 }
 
-@media screen and (min-width: 1150px) and (max-width: 1300px) {
+@media screen and (min-width: 1150px) and (max-width: 1399px) {
     .rectangle {
         &__container {
-            @include flexible(space-around, flex-start);
-            padding: 104px 0 104px 140px;
+            @include flexible(space-between, center);
+            padding: 104px 24px 100px 24px;
         }
         &--tight {
             padding-right: 24px;
+        }
+        &--copybox {
+            padding-left: 24px;
         }
     }
 }
@@ -175,24 +178,10 @@
     }
 }
 
-@media screen and (min-width: 951px) and (max-width: 1300px) {
-    div {
-        &.field__line {
-            padding-right: 24px;
-        }
-    }
-}
-
 .forward-list {
     &__wrapper {
         padding-bottom: 20px;
     }
-}
-
-@media screen and (max-width: 767px) {
-    /*В этом месте надо для особо класса указать стиль
-        Убрать отступ в списке
-    */
 }
 
 .space {
@@ -207,7 +196,7 @@
     }
     &__contain {
         @extend .space;
-        padding: 0 18px 0 20px;  
+        padding: 0 18px 0 20px;
     }
     &__user {
         @include flexible(space-between, center);
@@ -219,7 +208,7 @@
     .cm-card-body {
         &__relation {
             display: flex;
-            padding: 5px 3px 12px 3px; 
+            padding: 5px 3px 12px 3px;
         }
     }
 
@@ -251,20 +240,27 @@
     }
 }
 
-.content {
-    &__wrapper {
-        text-align: center;
+.grid {
+    &__content-wrapper {
+        text-align: left;
         margin-right: 250px;
         padding-bottom: 21px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .content {
-        &__wrapper {
-            text-align: center;
+    .grid {
+        &__content-wrapper {
             margin: 0;
-            padding: 21px 28px 21px 28px;
+            padding: 21px 28px;
+        }
+    }
+}
+
+@media screen and (min-width: 951px) and (max-width: 1300px) {
+    .grid {
+        &__content-wrapper {
+            margin-right: 0;
         }
     }
 }
@@ -336,7 +332,7 @@
     &__wrapper {
         width: max-content;
         &--temp {
-            padding: 30px 0 5px 0; 
+            padding: 30px 0 5px 0;
         }
         &--guest {
             padding: 20.44px 0 4.56px 0;
@@ -358,7 +354,7 @@
     }
     &__dropdownbox {
         &--long {
-            padding-top: 30px;  
+            padding-top: 30px;
         }
     }
     &__elembox {
@@ -429,6 +425,14 @@
     }
     &__wrapper-email {
         padding-bottom: 10px;
+    }
+    &__wrapp-btn {
+        display: flex;
+        &-icon {
+            position: absolute;
+            right: 0;
+            padding-right: 30px;
+        }
     }
     &__wrapper-switch {
         display: flex;
