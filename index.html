@@ -80,124 +80,15 @@
     <link rel="stylesheet" href="./modal-body/modal-body.css">
     <link rel="stylesheet" href="./form/form.css">
     <link rel="stylesheet" href="./form-title/form-title.css">
+    <link rel="stylesheet" href="./fullscreen-width/fullscreen-width.css">
     <link rel="stylesheet" href="./switch/switch.css">
+    <link rel="stylesheet" href="./label-field/label-field.css">
+    <link rel="stylesheet" href="./cust-btn/cust-btn.css">
+    <link rel="stylesheet" href="./btn-radio/radio.css">
+    <link rel="stylesheet" href="./text-description/text-description.css">
+    <link rel="stylesheet" href="./account-exist/account-exist.css">
     <style>
-        .my-radio {
-            position: relative;
-            display: flex;
-            width: 20px;
-            height: 20px;
-            background: #fff;
-            border: 1px solid #bc9cff;
-            box-sizing: border-box;
-            border-radius: 10px;
-        }
-
-        .my-radio__real {
-            appearance: none;
-        }
-
-        .my-radio__visibility {
-            display: block;
-            width: 12px;
-            height: 12px;
-            background: #fff;
-            position: absolute;
-            top: 0;
-            left: 0;
-            margin: 3px 0 0 3px;
-        }
-
-        .my-radio__visibility::before {
-            display: block;
-            content: "";
-            width: 12px;
-            height: 12px;
-            border: none;
-            background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
-            border-radius: 10px;
-        }
-
-        .my-radio__wrapper-text {
-            margin-left: calc(18px + 10px);
-        }
-
-        .text-description {
-            width: max-content;
-            font-family: 'Montserrat', sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 24px;
-            color: rgba(31, 32, 65, 0.75);
-        }
-
-        .label-field {
-            text-transform: uppercase;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 15px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .description {
-            width: max-content;
-            font-family: 'Montserrat', sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 24px;
-            color: rgba(31, 32, 65, 0.75);
-        }
-
-        .my-button {
-            width: 320px;
-            height: 44px;
-            background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
-            border-radius: 22px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .my-button-text {
-            font-family: 'Montserrat', sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
-            text-transform: uppercase;
-            color: #fff;
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding-right: 45px;
-        }
-
-        .my-button-icon::after {
-            content: "\f061";
-            font-family: 'Font Awesome 5 Pro';
-            color: #fff;
-            font-size: 24px;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .account-yet-text {
-            font-family: 'Montserrat', sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 18px;
-            color: #000;
-        }
-
-        .action {
+        .action { /*???*/
             width: 99px;
             height: 44px;
             background: #fff;
@@ -214,28 +105,351 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .sign-up--action {
-            width: 100%;
-        }
-
         @media screen and (min-width: 1150px) { /*Временный стиль*/
             .menu-call__humburger {
                 display: none;
             }
         }
 
-        .fullwidth-screen {
+        .text-logo {
+            z-index: 100;
+        }
+
+        .form__cntr {
+            display: flex;
+        }
+
+        .form__wrapper-radio {
+            display: flex;
+        }
+
+        .form__container-label {
+            padding-left: 10px;
+            padding-right: 20px;
+        }
+
+        .form__container-label:last-child {
+            padding-right: 0;
+        }
+
+        .radio {
+            display: block;
+            cursor: pointer;
+        }
+
+        .radio-hidden {
+            position: absolute;
+            appearance: none;
+            opacity: 0;
+        }
+
+        .radio-hidden:checked + .label {
+            border-color: rgba(31, 32, 65, 0.25);
+        }
+
+        .label {
+            position: relative;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #bc9cff;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        .label::after {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 100;
-            width: 100%;
-            height: 100%;
+            margin-top: 3px;
+            margin-left: 3px;
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+            opacity: 0.1;
+            border-radius: 10px;
+            transform: scale(0);
+            transition: all 0.75s ease-in-out;
+            pointer-events: none;
         }
 
-        .form {
+        .radio-hidden:hover + .label::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 3px;
+            margin-left: 3px;
+            transform: scale(3.6);
+        }
+
+        .radio-hidden:checked + .label::after {
+            transform: scale(1);
+            opacity: 1;
+            transition: all 0.75s ease-in-out;
+        }
+
+        .text-description--blocked {
+            display: block;
+        }
+
+        .header__wrapper-humburger {
+            display: flex;
+            align-items: center;
+            padding-bottom: 15px;
+            width: max-content;
+            margin-left: auto;
+        }
+
+        .header__menu {
+            position: absolute;
+            right: 0;
+            width: max-content;
+            z-index: 10;
+        }
+
+        .header__content--mobile {
+            background: #fff;
+            display: flex;
+            flex-flow: column;
+            padding: 0 24px 0 5px;
+        }
+
+        .btn-humburger {
+            position: relative;
+            z-index: 999;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            background: #fff;
+            line-height: 0.6;
+            border: 2px solid #8ba4f9;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.75s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn-humburger:hover {
+            box-shadow: 0 10px 20px rgba(31, 32, 65, 0.24);
+        }
+
+        .btn-humburger::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: transparent;
+            transition: all 1s ease;
+        }
+
+        .btn-humburger:hover::after {
+            background: #fff;
+            opacity: 0;
+            transform: scaleX(1.4) scaleY(1.6);
+        }
+
+        .btn-humburger__element {
+            position: relative;
+            display: block;
+            width: 25px;
+            height: 2px;
+        }
+
+        .btn-humburger__element::before,
+        .btn-humburger__element::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 18px;
+            height: 2px;
+        }
+
+        .btn-humburger__element,
+        .btn-humburger__element::before,
+        .btn-humburger__element::after,
+        .btn-humburger__element:hover::before,
+        .btn-humburger__element:hover::after,
+        .btn-humburger__element:focus::before,
+        .btn-humburger__element:focus::after {
+            background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+        }
+
+        .btn-humburger__element::before {
+            top: 0;
+            left: 0;
+            margin: -7px 3px;
+        }
+
+        .btn-humburger__element::after {
+            top: 0;
+            left: 0;
+            margin: 7px 3px;
+        }
+
+        .btn-humburger__element:focus {
+            outline: none;
+        }
+
+        .action-down > .btn-humburger__element {
+            background: transparent;
+        }
+
+        .action-down > .btn-humburger__element::before {
+            transform: rotate(45deg);
+            margin: 0 3px;
+        }
+
+        .action-down > .btn-humburger__element::after {
+            transform: rotate(313deg);
+            margin: 0 3px;
+        }
+
+        .action-down > .btn-humburger__element::before,
+        .action-down > .btn-humburger__element::after {
+            transition: all 0.5s ease-in-out;
+        }
+
+        .slowdown {
+            transition: all 0.75s ease-in-out;
+        }
+
+        .cm-menu {
+            background: #fff;
             height: max-content;
-            z-index: 1000;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        .cm-menu__header {
+            margin: 0;
+            width: 100%;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button.cm-menu__button {
+            border-radius: 0;
+        }
+
+        .cm-menu__button:focus {
+            border-color: transparent;
+            box-shadow: none;
+            outline: none;
+        }
+
+        .cm-submenu {
+            width: 100%;
+            border: none;
+        }
+
+        .cm-menu__item {
+            border-top: 2px solid #8ba4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+        }
+
+        .cm-menu__item--opened .cm-menu__header::after {
+            content: "\f078";
+            font-family: 'Font Awesome 5 Pro';
+            width: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(31, 32, 65, 0.5);
+        }
+
+        .cm-menu__item:last-child {
+            border-top: none;
+        }
+
+        .cm-menu__item {
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .cm-menu__item .cm-menu__button {
+            color: rgba(31, 32, 65, 0.5);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 17px;
+            cursor: pointer;
+        }
+
+        .cm-menu__item:first-child .cm-menu__button {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .cm-menu__item:nth-child(6) .cm-menu-header__btn-box,
+        .cm-menu__item:last-child .cm-menu-header__btn-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        @media screen and (max-width: 1139px) {
+            .header__content {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 1140px) {
+            .header__content--mobile {
+                display: none;
+            }
+        }
+
+        .cm-menu:not(.view) {
+            display: none;
+        }
+
+        .cm-menu__button {
+            display: block;
+            width: 100%;
+            height: 34px;
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        .cm-submenu__menu-body {
+            border-top: 2px solid #8ba4f9;
+        }
+
+        .menu {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .menu__link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            height: 34px;
+            color: rgba(31, 32, 65, 0.5);
+            font-style: normal;
+            font-weight: normal;
         }
     </style>
 </head>
@@ -252,10 +466,135 @@
                     </div>
                 </div>
             </div>
-            <div class="menu-call">
-                <!-- Вставляем меню в этот блок -->
+            <!-- <div class="menu-call">
+
+            </div> -->
+            <div class="header__menu">
+                <div class="header__content--mobile">
+                    <!-- Верстка кнопки -->
+                    <div class="header__wrapper-humburger">
+                        <div class="btn-humburger">
+                            <div class="btn-humburger__element"></div>
+                        </div>
+                    </div>
+                    <div class="accordion cm-menu">
+                        <div class="accordion-item cm-menu__item">
+                            <h2 class="accordion-header cm-menu__header">
+                                <button
+                                    class="accordion-button cm-menu__button collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne"
+                                >
+                                    О нас
+                                </button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item cm-menu__item cm-menu__item--opened">
+                            <h2 class="accordion-header cm-menu__header">
+                                <button
+                                    class="accordion-button cm-menu__button collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo"
+                                >
+                                    Услуги
+                                </button>
+                            </h2>
+                            <div
+                                id="collapseTwo"
+                                class="
+                                    accordion-collapse
+                                    cm-submenu
+                                    collapse
+                                    slowdown
+                                "
+                                data-bs-parent="#accordionExample"
+
+                            >
+                                <div class="accordion-body cm-submenu__menu-body">
+                                    <ul class="menu">
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link">Услуга 1</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link">Услуга 2</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link">Услуга 3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item cm-menu__item">
+                            <h2 class="accordion-header cm-menu__header">
+                                <button class="accordion-button cm-menu__button collapsed">
+                                    Вакансии
+                                </button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item cm-menu__item">
+                            <h2 class="accordion-header cm-menu__header">
+                                <button class="accordion-button cm-menu__button collapsed">
+                                    Новости
+                                </button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item cm-menu__item cm-menu__item--opened">
+                            <h2 class="accordion-header cm-menu__header">
+                                <button
+                                    class="accordion-button cm-menu__button collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive"
+                                >
+                                    Соглашения
+                                </button>
+                            </h2>
+                            <div
+                                id="collapseFive"
+                                class="
+                                    accordion-collapse
+                                    cm-submenu
+                                    collapse
+                                    slowdown
+                                "
+                                data-bs-parent="#accordionExample"
+                            >
+                                <div class="accordion-body cm-submenu__menu-body">
+                                    <ul class="menu">
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link">Соглашение 1</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link">Соглашение 2</a>
+                                        </li>
+                                        <li class="menu__item">
+                                            <a href="#" class="menu__link">Соглашение 3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item cm-menu__item">
+                            <div class="accordion-header cm-menu__header">
+                                <div class="cm-menu-header__btn-box">
+                                    <button class="btn btn--mobile btn--sign-in">Войти</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item cm-menu__item">
+                            <div class="accordion-header cm-menu__header">
+                                <div class="cm-menu-header__btn-box">
+                                    <button class="btn btn--mobile btn--sign-up">Зарегистрироваться</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__content">
+                    <!-- Особое меню для ПК -->
+                </div>
             </div>
-            <div class="header__entrance">
+            <div class="header__entrance"> <!-- написать медиа-запрос, который скрывает этот блок на мобильной версии -->
                 <div class="header__sign-in">
                     <button class="btn btn--sign-in">Войти</button>
                 </div>
@@ -282,7 +621,7 @@
                         </div>
                         <div class="sidebar__wrapper sidebar__wrapper--range">
                             <div class="subhead">диапазон цены</div>
-                            <div class="range-price" style="display: flex;"> <!-- -->
+                            <div class="range-price" style="display: flex;">
                                 <div class="self-price">
                                     5000
                                 </div>
@@ -312,7 +651,6 @@
                                     <div class="subhead">правила дома</div>
                                 </div>
                                 <div class="sidebar__elembox">
-                                    <!---->
                                     <label class="cm-checkbox">
                                         <input type="checkbox" class="cm-checkbox__input" checked>
                                         <span class="cm-checkbox__fake"></span>
@@ -1043,17 +1381,6 @@
                 <div class="rectangle__copybox">
                     <div class="copyright">Copyright &#169; 2018 Toxin отель. Все права защищены</div>
                 </div>
-                <!--<div class="icon__wrapper">
-                    <div class="icon__box">
-                        <div class="social-icon social-icon--tw"></div>
-                    </div>
-                    <div class="icon__box">
-                        <div class="social-icon social-icon--fb"></div>
-                    </div>
-                    <div class="icon__box">
-                        <div class="social-icon social-icon--vk"></div>
-                    </div>
-                </div> -->
                 <ul class="social-icons">
                     <li class="social-icons__item">
                         <a href="www.google.com" class="social-icons__link">
@@ -1090,21 +1417,23 @@
                                 <input type="text" class="input-data" placeholder="Фамилия">
                             </div>
                             <div class="form__select-gender">
-                                <div class="form__wrapp-radio">
-                                    <div class="my-radio">
-                                        <input type="radio" class="my-radio__real visible" checked="checked">
-                                        <div class="my-radio__visibility"></div>
-                                        <div class="my-radio__wrapper-text">
-                                            <div class="text-description">Мужчина</div>
+                                <div class="form__cntr">
+                                    <div class="form__wrapper-radio">
+                                        <label class="radio">
+                                            <input type="radio" name="radio" class="radio-hidden" checked>
+                                            <span class="label"></span>
+                                        </label>
+                                        <div class="form__container-label">
+                                            <span class="text-description text-description--blocked">Мужчина</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form__wrapp-radio">
-                                    <div class="my-radio">
-                                        <input type="radio" class="my-radio__real visible" checked="checked">
-                                        <div class="my-radio__visibility"></div>
-                                        <div class="my-radio__wrapper-text">
-                                            <div class="text-description">Женщина</div>
+                                    <div class="form__wrapper-radio">
+                                        <label class="radio">
+                                            <input type="radio" name="radio" class="radio-hidden">
+                                            <span class="label"></span>
+                                        </label>
+                                        <div class="form__container-label">
+                                            <span class="text-description text-description--blocked">Женщина</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1133,7 +1462,6 @@
                             </div>
                             <div class="my-button">
                                 <div class="my-button-text">Перейти к оплате</div>
-                                <div class="my-button-icon"></div>
                             </div>
                             <div class="form__wrapp-has-acc">
                                 <div class="account-yet-text">Уже есть аккаунт на Toxin</div>
@@ -1203,79 +1531,41 @@
         <script src="./carousel_init.js"></script>
         <script src="menu-piece/menu-piece.js"></script>
         <script src="range-slider/range-slider_js.js"></script>
+        <script src="dialog.js"></script>
         <script>
-            const enter = document.querySelector('.header__entrance');
-            const overlay = document.querySelector('.modal-background');
+            const main_btn = document.querySelector('.btn-humburger');
+            main_btn.addEventListener('click', () => {
+                main_btn.classList.toggle('action-down');
+            });
 
-            const dialogOpen = function(event) {
-                if (event.target.nodeName == 'BUTTON') {
-                    if (event.target.classList.contains('btn--sign-in')) {
-                        const current_classes = event.target.className.split(' ');
+            const view = document.querySelector('.cm-menu');
+            main_btn.addEventListener('click', () => {
+                view.classList.toggle('view');
+            })
 
-                        for (let current of current_classes) {
-                            if (current == 'btn--sign-in') {
-                                var class_name = current;
-                            }
-                        }
 
-                        const dialog = document.querySelector(`#${class_name}`);
-                        overlay.classList.remove('hidden');
-                        dialog.classList.remove('hidden');
-
-                        const body = dialog.querySelector(`#${class_name} .modal-body`);
-                        body.classList.add('rise-modal');
-
-                        const form = dialog.querySelector(`#${class_name} .form`);
-                        form.classList.add('rise-dialog');
-
-                    } else if (event.target.classList.contains('btn--sign-up')) {
-                        const current_classes = event.target.className.split(' ');
-
-                        for (let current of current_classes) {
-                            if (current == 'btn--sign-up') {
-                                var class_name = current;
-                            }
-                        }
-
-                        const dialog = document.querySelector(`#${class_name}`);
-                        overlay.classList.remove('hidden');
-                        dialog.classList.remove('hidden');
-
-                        const body = document.querySelector(`#${class_name} .modal-body`);
-                        body.classList.add('rise-modal');
-
-                        const form = dialog.querySelector(`#${class_name} .form`);
-                        form.classList.add('rise-dialog');
-                    }
-                } else return;
-            }
-
-            const dialogClose = function() {
-                const dialogs = Array.from(document.querySelectorAll('.modal-window'));
-
-                for (let window of dialogs) {
-                    if (!window.classList.contains('hidden')) {
-                        window.classList.add('hidden');
-                        overlay.classList.add('hidden');
-                    }
+            const items = Array.from(view.querySelectorAll('.cm-menu__item'));
+            for (const item of items) {
+                if (item.classList.contains('cm-menu__item--opened')) {
+                    item.addEventListener('click', () => {
+                        const submenu = item.querySelector('.cm-submenu');
+                        submenu.classList.toggle('show');
+                    });
                 }
             }
-
-            enter.addEventListener('click', dialogOpen);
-            overlay.addEventListener('click', dialogClose);
-            /*
-                1) Сделать подпункты меню, меню 3-го уровня
+        </script>
+        <!--
+             1) Сделать подпункты меню, меню 3-го уровня
                 2) Сделать адаптивный шрифт, списать формулы
                 3)
                 3.1) В модальном окне "Войти" доработать функционал радио кнопок
                 3.2) Написать или использовать либу для поля ввода с календарем
                 4) Написать работающую пагинацию
-                5) Заменить реализацию карточек с флексбокс на грид
-                6)  Эффект блика для кнопок
+                5) Заменить реализацию карточек с флексбокс на грид - ?
                 7) Сделать анимацию текста при скролле
                 8) Анимацию изображений
                 9) Для текстовых полей написать readMoreReadLess
-            */
-        </script>
+
+        -->
     </body>
 </html>
