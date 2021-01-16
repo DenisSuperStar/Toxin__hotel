@@ -12,11 +12,4 @@
   z-index: 9999;
   margin-top: 70px;
 }
-
-@media screen and (max-width: 1149px) {
-  .modal-window {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
 /*# sourceMappingURL=modal-window.css.map */
