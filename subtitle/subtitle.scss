@@ -1,8 +1,63 @@
-.subtitle {
+.subtitle-copy {
+    position: relative;
+    display: flex;
+    margin-bottom: 0;
+}
+
+.subtitle-copy__letter {
+    display: block;
+    position: relative;
     font-family: 'Quicksand', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
     line-height: 30px;
     color: #1f2041;
+    margin-right: -0.2px;
+    &:last-child {
+        margin-right: 0;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        margin-top: 3px;
+        left: 0;
+        height: 85%;
+        width: 0;
+        transition: all 0.5s ease-in-out;
+        z-index: -5;
+    }
+}
+
+.subtitle-copy__letter--spaced {
+    margin-right: 8px;
+}
+
+.share:hover > .subtitle-copy__letter {
+    color: #fff;
+    background: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.share:hover > .subtitle-copy__letter::after {
+    width: 100%;
+    background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+}
+
+$begin: 1;
+$end: 40;
+
+@for $j from $begin to $end {
+    .share:hover > .subtitle-copy__letter:nth-child(#{$j})::after {
+        $delay: 100 * $j;
+        transition-delay: $delay + ms;
+    }
+
+    .share:hover > .subtitle-copy__letter:nth-child(#{$j}) {
+        $delay_copy: 110 * $j;
+        $rotation: $j * 0.01;
+        transition-delay: $delay_copy + ms;
+        transform: rotate($rotation + deg);
+    }
 }
