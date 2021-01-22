@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACT,cAAc,EAAE,SAAS;EACzB,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,IAAI;EACjB,WAAW,EAAE,wBAAwB;CACxC",
+    "sources": [
+        "label-field.scss"
+    ],
+    "names": [],
+    "file": "label-field.css"
+}

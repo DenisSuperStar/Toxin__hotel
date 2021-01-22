@@ -451,6 +451,12 @@
     }
 }
 
+.my-radio {
+    &__wrapper-text {
+        margin-left: calc(18px + 10px);
+    }
+}
+
 /*Анимация модальных окон*/
 .hidden {
     visibility: hidden !important;
@@ -467,4 +473,8 @@
 .rise-dialog {
     transform: scale(1) !important;
     transition: transform 0.5s ease-in-out !important;
+}
+
+.share {
+    cursor: pointer;
 }

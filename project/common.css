@@ -567,6 +567,10 @@
   padding-top: 30px;
 }
 
+.my-radio__wrapper-text {
+  margin-left: calc(18px + 10px);
+}
+
 /*Анимация модальных окон*/
 .hidden {
   visibility: hidden !important;
@@ -591,5 +595,9 @@
   transition: -webkit-transform 0.5s ease-in-out !important;
   transition: transform 0.5s ease-in-out !important;
   transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out !important;
+}
+
+.share {
+  cursor: pointer;
 }
 /*# sourceMappingURL=common.css.map */
