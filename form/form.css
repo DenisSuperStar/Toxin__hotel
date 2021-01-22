@@ -11,6 +11,10 @@
   padding-top: 40px;
   padding-left: 30px;
   padding-right: 30px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  z-index: 1000;
 }
 
 .form--long {

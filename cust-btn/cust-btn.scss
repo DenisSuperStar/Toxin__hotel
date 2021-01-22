@@ -1,0 +1,60 @@
+.my-button {
+    width: 320px;
+    height: 44px;
+    background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+    border-radius: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 100%;
+        background: rgba(244, 254, 255, 0.25);
+        transform: translateX(-100px) skewX(-45deg);
+    }
+    &:hover::before {
+        animation: move-light 1s ease-in-out;
+    }
+    &-text {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #fff;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &::after {
+            content: "\f061";
+            font-family: 'Font Awesome 5 Pro';
+            color: #fff;
+            font-size: 24px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+@keyframes move-light {
+    0% {
+        transform: translateX(-150px) skexX(-45deg);
+    }
+    100% {
+        transform: translateX(350px) skewX(-45deg);
+    }
+}
