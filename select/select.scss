@@ -11,6 +11,13 @@
     border-radius: 4px;
 }
 
+@mixin hidden {
+    position: absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 $out_line: 1px solid rgba(31, 32, 65, 0.25);
 $in_line: none;
 
@@ -50,7 +57,7 @@ $in_line: none;
             text-transform: uppercase;
             font-weight: bold;
             font-size: 12px;
-            color: #1f2041;  
+            color: #1f2041;
         }
     }
     &__icon {
@@ -75,7 +82,7 @@ $in_line: none;
         border-bottom: none;
     }
     &__dropdown {
-        z-index: 9999;
+        z-index: 99999;
         display: none;
         position: absolute;
         top: 0;
@@ -112,7 +119,7 @@ $in_line: none;
             transition: background-color 300ms ease-in;
             & .select__link,
             & .select__count {
-                color: #fff; 
+                color: #fff;
             }
 
             & .select__dec,
@@ -181,29 +188,43 @@ $in_line: none;
         margin-bottom: 10.56px;
     }
     &__checkbox {
-        position: absolute;
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-    }
-    &__unit {
-        display: flex;
-        flex-flow: column;
-        background: #fff;
+        @include hidden();
+        &:checked + .select__fake {
+            border-color: #bc9cff;
+            animation: jellybox 0.7s ease;
+            &::after {
+                opacity: 1;
+                transform: rotate(45deg) scale(1);
+            }
+        }
     }
     &__mark {
         display: flex;
     }
     &__fake {
-        display: block;
+        @include flexible(center, baseline);
         position: relative;
         width: 20px;
         height: 20px;
+        border: 1px solid #bc9cff;
         background: #fff;
-        border: 1px solid rgba(31, 32, 65, 0.25);
         box-sizing: border-box;
+        padding-top: 4px;
         border-radius: 4px;
-        margin: 0 10px;
+        margin-right: 10px;
+        cursor: pointer;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 8px;
+            opacity: 0;
+            transform: rotate(45deg) scale(0);
+            border-right: 2px solid #8ba4f9;
+            border-bottom: 2px solid #8ba4f9;
+            transition: all 0.5s ease-in-out;
+            transition-delay: 0.15s;
+        }
         & + .select__text {
             font-weight: bold;
             font-size: 14px;
@@ -211,14 +232,41 @@ $in_line: none;
             color: rgba(31, 32, 65, 0.5);
         }
     }
-    &__checkbox:checked + .select__fake::after {
-        content: "\f00c";
-        font-family: 'Font Awesome 5 Pro';
-        position: absolute;
-        @include flexible(center, center);
-        width: 20px;
-        height: 20px;
-        color: #8ba4f9;
-        padding-right: 1px;
+    &__unit {
+        display: flex;
+        flex-flow: column;
+        background: #fff;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    .select {
+        &__unit {
+            padding-left: 10px;
+        }
+    }
+}
+
+@keyframes jellybox {
+    0% {
+        transform: scale(1, 1);
+    }
+    30% {
+        transform: scale(1.25, 0.75);
+    }
+    40% {
+        transform: scale(0.75, 1.25);
+    }
+    50% {
+        transform: scale(1.15, 0.85);
+    }
+    65% {
+        transform: scale(0.95, 1.05);
+    }
+    75% {
+        transform: scale(1.05, 0.95);
+    }
+    100% {
+        transform: scale(1, 1);
     }
 }

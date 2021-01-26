@@ -1,3 +1,14 @@
+
+.subtitle {
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #1f2041;
+}
+
 .subtitle-copy {
     position: relative;
     display: flex;
@@ -59,5 +70,15 @@ $end: 40;
         $rotation: $j * 0.01;
         transition-delay: $delay_copy + ms;
         transform: rotate($rotation + deg);
+    }
+}
+
+@media screen and (max-width: 719px) {
+    .subtitle {
+        display: block !important;
+        text-align: center;
+        &-copy {
+            display: none;
+        }
     }
 }
