@@ -1,3 +1,9 @@
+/*Большой вопрос, почему отвалились кнопки???*/
+
+.state-shadow {
+    box-shadow: 0 5px 10px rgba(31, 32, 65, 0.2);
+}
+
 .btn,
 .btn:link,
 .btn:visited {
@@ -16,71 +22,93 @@
     transition: all 0.75s ease;
 }
 
-.btn--sign-in,
-.btn--sign-in:link,
-.btn--sign-in:visited {
-    width: 87px;
-    height: 34px;
-    background: #fff;
-    color: #bc9cff;
-    border: 2px solid #bc9cff;
+.btn {
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(31, 32, 65, 0.2);
+        &::after {
+            background: #fff;
+            opacity: 0;
+            transform: scaleX(1.4) scaleY(1.6);
+        }
+    }
+    &:active {
+        transform: translateY(-1px);
+        @extend .state-shadow;
+    }
+    &:focus {
+        outline: none;
+        @extend .state-shadow;
+    }
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 22px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent;
+        transition: all 1s ease;
+    }
+    &--action {
+        width: 100% !important;
+        height: 44px !important;
+    }
+    &--sign-in,
+    &--sign-in:link,
+    &--sign-in:visited {
+        width: 87px;
+        height: 34px;
+        background: #fff;
+        border: 2px solid #bc9cff;
+    }
+    &--sign-in,
+    &--sign-in:link,
+    &--sign-in:visited,
+    &--sign-in:hover {
+        color: #bc9cff;
+    }
+    &--sign-up,
+    &--sign-up:link,
+    &--sign-up:visited {
+        width: 196px;
+        height: 34px;
+        background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+        border: none;
+    }
+    &--sign-up,
+    &--sign-up:link,
+    &--sign-up:visited,
+    &--sign-up:hover {
+        color: #fff;
+    }
+    &--transform {
+        width: 99px;
+        height: 44px;
+        background: #fff;
+        border: 2px solid #bc9cff;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+    }
 }
 
-.btn--sign-in:hover {
-    color: #bc9cff;
-}
+@media screen and (max-width: 1149px) {
+    .btn--sign-in:not(.is-dialog),
+    .btn--sign-up:not(.is-dialog) {
+        width: 100%;
+        height: 60%;
+    }
 
-.btn--sign-up,
-.btn--sign-up:link,
-.btn--sign-up:visited {
-    width: 196px;
-    height: 34px;
-    background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
-    border: none;
-    color: #fff;
-}
+    .btn--sign-in:not(.is-dialog),
+    .btn--sign-up:not(.is-dialog) {
+        font-size: 16px;
+    }
 
-.btn--sign-up:hover {
-    color: #fff;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.2);
-}
-
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(31, 32, 65, 0.2);
-}
-
-.btn:focus {
-    outline: none;
-    box-shadow: 0 5px 10px rgba(31, 32, 65, 0.2);
-}
-
-.btn::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 22px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: transparent;
-    transition: all 1s ease;
-}
-
-.btn:hover::after {
-    background: #fff;
-    opacity: 0;
-    transform: scaleX(1.4) scaleY(1.6);
-}
-
-.btn--action {
-    width: 100%;
-    height: 44px;
+    .btn--sign-in.is-dialog,
+    .btn--sign-up.is-dialog {
+        font-size: 14px;
+    }
 }
 
 @keyframes waves {

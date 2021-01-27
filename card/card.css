@@ -25,11 +25,18 @@
   }
 }
 
-@media screen and (max-width: 1149px) {
+@media screen and (max-width: 950px) {
   .cm-card {
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
+  }
+}
+
+@media screen and (min-width: 951px) and (max-width: 1149px) {
+  .cm-card {
+    margin: 0;
+    max-width: 100%;
   }
 }
 /*# sourceMappingURL=card.css.map */

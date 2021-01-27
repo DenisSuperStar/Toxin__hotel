@@ -1,0 +1,94 @@
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: $item;
+}
+
+.btn-humburger {
+    position: relative;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: #fff;
+    line-height: 0.6;
+    border: 2px solid #8ba4f9;
+    border-radius: 50%;
+    @include flexible(center, center);
+    transition: all 0.75s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0 10px 20px rgba(31, 32, 65, 0.24);
+        &::after {
+            background: #fff;
+            opacity: 0;
+            transform: scaleX(1.4) scaleY(1.6);
+        }
+    }
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent;
+        transition: all 1s ease;
+    }
+    &__element {
+        position: relative;
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+        &::before,
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            content: "";
+            width: 18px;
+            height: 2px;
+        }
+        &::before,
+        &::after,
+        &:hover::before,
+        &:hover::after,
+        &:focus::before,
+        &:focus::after {
+            background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+        }
+        &::before {
+            margin: -7px 3px;
+        }
+        &::after {
+            margin: 7px 3px;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.action-down {
+    & > .btn-humburger__element {
+        background: transparent;
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(313deg);
+        }
+        &::before,
+        &::after {
+            margin: 0 3px;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+
+.slowdown {
+    transition: all 0.75s ease-in-out;
+}

@@ -24,31 +24,39 @@
     }
     &__input {
         @include hidden();
-        &:checked {
-            & + .extendcheck__fake {
-                &::after {
-                    content: "\f00c";
-                    font-family: 'Font Awesome 5 Pro';
-                    @include flexible(center, center);
-                    width: 20px;
-                    height: 20px;
-                    position: absolute;
-                    color: #8ba4f9;
-                    padding-right: 1px;
-                }
+        &:checked + .extendcheck__fake {
+            border-color: #bc9cff;
+            animation: jellybox 0.7s ease;
+            &::after {
+                opacity: 1;
+                transform: rotate(45deg) scale(1);
             }
         }
     }
     &__fake {
-        display: block;
+        @include flexible(center, baseline);
         position: relative;
         width: 20px;
         height: 20px;
+        border: 1px solid #bc9cff;
         background: #fff;
-        border: 1px solid rgba(31, 32, 65, 0.25);
         box-sizing: border-box;
+        padding-top: 4px;
         border-radius: 4px;
         margin-right: 10px;
+        cursor: pointer;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 8px;
+            opacity: 0;
+            transform: rotate(45deg) scale(0);
+            border-right: 2px solid #8ba4f9;
+            border-bottom: 2px solid #8ba4f9;
+            transition: all 0.5s ease-in-out;
+            transition-delay: 0.15s;
+        }
     }
     &__textlarge {
         @include label();
@@ -64,5 +72,29 @@
         font-size: 12px;
         line-height: 14px;
         color: rgba(31, 32, 65, 0.5);
+    }
+}
+
+@keyframes jellybox {
+    0% {
+        transform: scale(1, 1);
+    }
+    30% {
+        transform: scale(1.25, 0.75);
+    }
+    40% {
+        transform: scale(0.75, 1.25);
+    }
+    50% {
+        transform: scale(1.15, 0.85);
+    }
+    65% {
+        transform: scale(0.95, 1.05);
+    }
+    75% {
+        transform: scale(1.05, 0.95);
+    }
+    100% {
+        transform: scale(1, 1);
     }
 }
