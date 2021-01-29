@@ -1,12 +1,11 @@
 .grid {
     width: 100%;
-    max-width: 1000px;
+    padding-right: 140px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 950px) {
+@media screen and (min-width: 1400px) {
     .grid {
-        width: 100% !important;
-        margin: 0 auto !important;
+        max-width: 1032px;
     }
 }
 
@@ -16,8 +15,15 @@
     }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (max-width: 950px) {
     .grid {
-        padding-right: 140px;
+        padding-right: 0;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 950px) {
+    .grid {
+        width: 100% !important;
+        margin: 0 auto !important;
     }
 }
