@@ -60,6 +60,7 @@
   background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+  padding: 12px 12px 0 12px;
 }
 
 .flip-box__view-reviews {
