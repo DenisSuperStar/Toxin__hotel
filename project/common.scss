@@ -82,22 +82,13 @@
     }
 }
 
-@media screen and (min-width: 1150px) {
-    .header {
-        &__complicated-menu {
-            width: 100%;
-            @include flexible(flex-end, center);
+@media screen and (min-width: 768px) and (max-width: 950px) {
+    .content {
+        &__sidebar {
+            width: 100% !important;
         }
     }
 }
-
-@media screen and (max-width: 1149px) {
-    .header__visible {
-        display: block;
-        order: 1;
-    }
-}
-
 
 .rectangle {
     &__container {
@@ -202,23 +193,6 @@
         }
         &--copybox {
             padding-left: 24px;
-        }
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 950px) {
-    div {
-        &.content__sidebar {
-            width: 100%;
-        }
-
-        &.grid {
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        &.field__line {
-            padding-right: 0;
         }
     }
 }
@@ -331,6 +305,19 @@
     }
 }
 
+/*Перенести в отдельный компонент*/
+/*Начало блока стилей компонент "Поля"*/
+/*
+    Переименовать названия классов
+    grid-complex -> grid
+    grid -> grid__content
+    grid__content-wrapper -> grid__title
+    field -> grid__items
+    field__line -> grid__item
+    field__wrapper -> grid__box-item
+
+    После переименования перенести стили сетки в отдельный файл
+*/
 .field {
     &__line {
         width: 100%;
@@ -344,28 +331,39 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .field {
+        margin-bottom: 12px;
         &__line {
+            margin-bottom: 12px;
             @include state-column();
-            &:last-child {
-                margin-bottom: 18px;
-            }
-        }
-        &__wrapper {
-            padding-bottom: 18px;
-            &:last-child {
-                padding-bottom: 0;
+            & > .field__wrapper {
+                margin-bottom: 12px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
     }
 }
 
-@media screen and (min-width: 951px) and (max-width: 1149px) {
-    .field__wrapper {
-        width: 30%;
+@media screen and (min-width: 951px) and (max-width: 1140px) {
+    .field {
+        &__wrapper {
+            width: 32%;
+        }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .field {
+        &__wrapper {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+/*Конец блока стилей компонента "Поле"*/
 
 .card-slider {
     &__img {

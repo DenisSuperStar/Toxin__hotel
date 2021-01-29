@@ -94,27 +94,9 @@
   margin-right: 20px;
 }
 
-@media screen and (min-width: 1150px) {
-  .header__complicated-menu {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-@media screen and (max-width: 1149px) {
-  .header__visible {
-    display: block;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
+@media screen and (min-width: 768px) and (max-width: 950px) {
+  .content__sidebar {
+    width: 100% !important;
   }
 }
 
@@ -268,19 +250,6 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 950px) {
-  div.content__sidebar {
-    width: 100%;
-  }
-  div.grid {
-    width: 100%;
-    margin: 0 auto;
-  }
-  div.field__line {
-    padding-right: 0;
-  }
-}
-
 .forward-list__wrapper {
   padding-bottom: 20px;
 }
@@ -391,6 +360,19 @@
   padding-right: 5px;
 }
 
+/*Перенести в отдельный компонент*/
+/*Начало блока стилей компонент "Поля"*/
+/*
+    Переименовать названия классов
+    grid-complex -> grid
+    grid -> grid__content
+    grid__content-wrapper -> grid__title
+    field -> grid__items
+    field__line -> grid__item
+    field__wrapper -> grid__box-item
+
+    После переименования перенести стили сетки в отдельный файл
+*/
 .field__line {
   width: 100%;
   -webkit-box-orient: horizontal;
@@ -405,8 +387,12 @@
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
+  .field {
+    margin-bottom: 12px;
+  }
   .field__line {
+    margin-bottom: 12px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -415,23 +401,32 @@
         -ms-flex-flow: column;
             flex-flow: column;
   }
-  .field__line:last-child {
-    margin-bottom: 18px;
+  .field__line > .field__wrapper {
+    margin-bottom: 12px;
   }
-  .field__wrapper {
-    padding-bottom: 18px;
-  }
-  .field__wrapper:last-child {
-    padding-bottom: 0;
+  .field__line > .field__wrapper:last-child {
+    margin-bottom: 0;
   }
 }
 
-@media screen and (min-width: 951px) and (max-width: 1149px) {
+@media screen and (min-width: 951px) and (max-width: 1140px) {
   .field__wrapper {
-    width: 30%;
+    width: 32%;
   }
 }
 
+@media screen and (max-width: 768px) {
+  .field__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+/*Конец блока стилей компонента "Поле"*/
 .card-slider__img {
   width: 100%;
   height: 155px !important;
