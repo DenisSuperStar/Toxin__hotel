@@ -10,16 +10,25 @@
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1399px) {
+@media screen and (min-width: 1140px) and (max-width: 1399px) {
   .flip-action {
-    width: 100%;
+    width: 255px;
   }
-  .flip-action__box {
+}
+
+@media screen and (min-width: 950px) and (max-width: 1139px) {
+  .flip-action {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 949px) {
+  .flip-action {
+    width: 233px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .flip-action {
     width: 270px;
   }
@@ -66,17 +75,5 @@
 .flip-box__view-reviews {
   margin-top: 12px;
   width: 100%;
-}
-
-@media screen and (min-width: 1400px) {
-  .flip-action__box {
-    width: 270px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .flip-action__box {
-    width: 270px;
-  }
 }
 /*# sourceMappingURL=flip-element.css.map */
