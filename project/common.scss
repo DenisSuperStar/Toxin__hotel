@@ -43,6 +43,14 @@
     }
 }
 
+@media screen and (min-width: 768px) and (max-width: 949px) {
+    .header {
+        &__content--mobile {
+            padding: 0 24px 8px 10px;
+        }
+    }
+}
+
 @media screen and (min-width: 1140px) {
     .header {
         &__menu {
@@ -92,10 +100,11 @@
 
 .rectangle {
     &__container {
+        width: 100%;
         @include flexible(space-between, flex-start);
         padding: 104px 140px 100px 140px;
     }
-    &--tight {
+    &--in-around {
         border: none;
         @include flexible(space-between, center);
         padding: 26px 140px 26px 0;
@@ -125,7 +134,7 @@
                 margin-bottom: 0;
             }
         }
-        &--tight {
+        &--in-around {
             padding-right: 24px;
         }
         &__logo,
@@ -148,10 +157,6 @@
             min-width: min-content;
             padding: 104px 0 104px 24px;
         }
-        &--tight {
-            padding-right: 34px;
-            min-width: 798px;
-        }
         &__mix {
             margin-right: 5px;
         }
@@ -173,7 +178,7 @@
             @include flexible(space-around, flex-start);
             padding: 104px 0;
         }
-        &--tight {
+        &--in-around {
             padding-right: 24px;
         }
         &__copybox {
@@ -188,7 +193,7 @@
             @include flexible(space-between, center);
             padding: 104px 24px 100px 24px;
         }
-        &--tight {
+        &--in-around {
             padding-right: 24px;
         }
         &--copybox {
@@ -331,7 +336,16 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 960px) {
+    .field__line > .field__wrapper {
+        margin-right: 12px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
     .field {
         margin-bottom: 12px;
         &__line {
@@ -340,9 +354,19 @@
             & > .field__wrapper {
                 margin-bottom: 12px;
                 &:last-child {
-                    margin-bottom: 0;
+                    margin: 0;
                 }
             }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 950px) {
+    .field {
+        &__line {
+            margin: 0;
+            flex-flow: row;
+            padding-left: 24px;
         }
     }
 }
