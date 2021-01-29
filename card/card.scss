@@ -4,16 +4,20 @@
     border: none;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
     border-radius: 4px;
-    &:first-child,
-    &:nth-child(2) {
-        margin-right: 12px;
+    cursor: pointer;
+    &__face {
+        position: absolute;
+        /*Задаем высоту таким способом*/
+        top: 0;
+        bottom: 0;
+        backface-visibility: hidden;
     }
     &--last {
         margin-right: 0;
     }
 }
 
-@media screen and (max-width: 767px) {
+/*@media screen and (max-width: 767px) {
     .central {
         margin: 0 auto;
     }
@@ -41,3 +45,12 @@
         max-width: 100%;
     }
 }
+
+@media screen and (max-width: 1399px) {
+    .cm-card {
+        &:first-child,
+        &:nth-child(2) {
+            margin-right: 12px;
+        }
+    }
+}*/

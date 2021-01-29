@@ -1,0 +1,73 @@
+.flip-action {
+    perspective: 1000px;
+}
+
+@media screen and (min-width: 1400px) {
+    .flip-action {
+        width: 270px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1399px) {
+    .flip-action {
+        width: 100%;
+        &__box {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .flip-action {
+        width: 270px;
+    }
+}
+
+.flip-action__box {
+    position: relative;
+    /*Обязательно должна быть задана высота блока*/
+    height: 257px;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
+    &:hover {
+        transform: rotateY(180deg);
+    }
+    &__text {
+        cursor: pointer;
+    }
+}
+
+.flip-box {
+    &__footer {
+        position: absolute;
+        /*Особым способом задаем высоту*/
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+        transform: rotateY(180deg);
+    }
+    &__view-reviews {
+        margin-top: 12px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .flip-action {
+        &__box {
+            width: 270px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .flip-action {
+        &__box {
+            width: 270px;
+        }
+    }
+}
