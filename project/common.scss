@@ -90,20 +90,7 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 950px) {
-    .content {
-        &__sidebar {
-            width: 100% !important;
-        }
-    }
-}
-
 .rectangle {
-    &__container {
-        width: 100%;
-        @include flexible(space-between, flex-start);
-        padding: 104px 140px 100px 140px;
-    }
     &--in-around {
         border: none;
         @include flexible(space-between, center);
@@ -124,10 +111,27 @@
     }
 }
 
+.rectangle {
+    &__container {
+        width: 100%;
+        @include flexible(space-between, flex-start);
+        padding: 104px 140px 100px 140px;
+    }
+}
+
+@media screen and (min-width: 961px) and (max-width: 1149px) {
+    .rectangle {
+        &__container {
+            @include flexible(space-around, flex-start);
+            padding: 104px 0;
+        }
+    }
+}
+
 @media screen and (min-width: 768px) and (max-width: 960px) {
     .rectangle {
         &__container {
-            padding: 104px 24px;
+            padding: 104px 0 100px 24px;
         }
     }
 }
@@ -139,9 +143,14 @@
             padding: 104px 0;
             text-align: center;
             & > div:last-child {
-                margin-bottom: 0;
+                margin: 0;
             }
         }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .rectangle {
         &--in-around {
             padding-right: 24px;
         }
@@ -161,10 +170,6 @@
 
 @media screen and (min-width: 768px) and (max-width: 950px) {
     .rectangle {
-        &__container {
-            min-width: min-content;
-            padding: 104px 0 104px 24px;
-        }
         &__mix {
             margin-right: 5px;
         }
@@ -182,10 +187,6 @@
 
 @media screen and (min-width: 951px) and (max-width: 1149px) {
     .rectangle {
-        &__container {
-            @include flexible(space-around, flex-start);
-            padding: 104px 0;
-        }
         &--in-around {
             padding-right: 24px;
         }
@@ -274,25 +275,16 @@
 
 .grid {
     &__content-wrapper {
-        text-align: left;
         margin-right: 250px;
         padding-bottom: 21px;
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1300px) {
     .grid {
         &__content-wrapper {
             margin: 0;
-            padding: 21px 28px;
-        }
-    }
-}
-
-@media screen and (min-width: 951px) and (max-width: 1300px) {
-    .grid {
-        &__content-wrapper {
-            margin-right: 0;
+            padding: 21px 0;
         }
     }
 }
