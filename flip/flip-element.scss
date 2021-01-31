@@ -1,3 +1,7 @@
+.turn {
+    transform: rotateY(180deg);
+}
+
 .flip-action {
     perspective: 1000px;
 }
@@ -39,7 +43,7 @@
     transform-style: preserve-3d;
     transition: transform 1s ease-in-out;
     &:hover {
-        transform: rotateY(180deg);
+        transform: rotate(0deg);
     }
     &__text {
         cursor: pointer;
