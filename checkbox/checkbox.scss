@@ -11,6 +11,12 @@
     -moz-appearance: none;
 }
 
+@mixin slice {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .cm-checkbox {
     display: flex;
     &__input {
@@ -50,6 +56,12 @@
         }
     }
     &__text {
+        /*
+            Обязательное свойство для
+            обрезки текстовых полей
+        */
+        display: block;
+        width: 192px;
         height: max-content;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
@@ -57,8 +69,9 @@
         font-size: 14px;
         line-height: 18px;
         color: rgba(31, 32, 65, 0.5);
+        @include slice();
         &--uniq {
-            width: 192px;
+            white-space: break-spaces;
         }
     }
 }

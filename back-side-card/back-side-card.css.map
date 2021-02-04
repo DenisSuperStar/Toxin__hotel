@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": ";AAAA,AAAA,eAAe,CAAC;EACZ,QAAQ,EAAE,QAAQ;EAClB,iCAAiC;EACjC,GAAG,EAAE,CAAC;EACN,MAAM,EAAE,CAAC;EACT,mBAAmB,EAAE,MAAM;EAC3B,UAAU,EAAE,MAAM;EAClB,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,gDAAgD;EAC5D,SAAS,EAAE,eAAe;EAC1B,OAAO,EAAE,gBAAgB;CAO5B;;AANI,AAAD,gCAAkB,CAAC;EACf,MAAM,EAAE,OAAO;CAClB;;AACA,AAAD,6BAAe,CAAC;EACZ,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "back-side-card.scss"
+    ],
+    "names": [],
+    "file": "back-side-card.css"
+}

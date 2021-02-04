@@ -1,0 +1,18 @@
+.card-back-side {
+    position: absolute;
+    /*Особым способом задаем высоту*/
+    top: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+    transform: rotateY(180deg);
+    padding: 12px 12px 0 12px;
+    &__background-text {
+        cursor: pointer;
+    }
+    &__view-reviews {
+        width: 100%;
+    }
+}

@@ -4,6 +4,16 @@
 
 .flip-action {
     perspective: 1000px;
+    &__box {
+        position: relative;
+        /*Обязательно должна быть задана высота блока*/
+        height: 257px;
+        transform-style: preserve-3d;
+        transition: transform 1s ease-in-out;
+        /*&:hover {
+            transform: rotate(0deg);
+        }*/
+    }
 }
 
 @media screen and (min-width: 1400px) {
@@ -33,39 +43,5 @@
 @media screen and (max-width: 767px) {
     .flip-action {
         width: 270px;
-    }
-}
-
-.flip-action__box {
-    position: relative;
-    /*Обязательно должна быть задана высота блока*/
-    height: 257px;
-    transform-style: preserve-3d;
-    transition: transform 1s ease-in-out;
-    &:hover {
-        transform: rotate(0deg);
-    }
-    &__text {
-        cursor: pointer;
-    }
-}
-
-.flip-box {
-    &__footer {
-        position: absolute;
-        /*Особым способом задаем высоту*/
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        backface-visibility: hidden;
-        text-align: center;
-        color: #fff;
-        background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
-        transform: rotateY(180deg);
-        padding: 12px 12px 0 12px;
-    }
-    &__view-reviews {
-        margin-top: 12px;
-        width: 100%;
     }
 }
