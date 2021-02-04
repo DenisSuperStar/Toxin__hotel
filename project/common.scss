@@ -551,3 +551,24 @@
 .share {
     cursor: pointer;
 }
+
+.form {
+    &__radio-buttons-box {
+        display: flex;
+    }
+}
+
+.radio {
+    &__description-box {
+        padding: 0 20px 0 10px;
+    }
+    &:last-child &__description-box {
+        padding: 0 0 0 10px;
+    }
+}
+
+.card-back-side {
+    &__view-reviews {
+        margin-top: 12px;
+    }
+}

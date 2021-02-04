@@ -1,0 +1,54 @@
+.radio {
+    display: flex;
+    &-checker {
+        display: block;
+        cursor: pointer;
+        &__hidden {
+            position: absolute;
+            appearance: none;
+            opacity: 0;
+        }
+        &__hidden:checked + &__imitation {
+            border-color: rgba(31, 32, 65, 0.25);
+        }
+        &__hidden:hover + &__imitation::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 3px;
+            margin-left: 3px;
+            transform: scale(3.6);
+        }
+        &__hidden:checked + &__imitation::after {
+            transform: scale(1);
+            opacity: 1;
+            transition: all 0.75s ease-in-out;
+        }
+        &__imitation {
+            position: relative;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #bc9cff;
+            box-sizing: border-box;
+            border-radius: 10px;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-top: 3px;
+                margin-left: 3px;
+                width: 12px;
+                height: 12px;
+                background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+                opacity: 0.1;
+                border-radius: 10px;
+                transform: scale(0);
+                pointer-events: none;
+                transition: all 0.75s ease-in-out;
+            }
+        }
+    }
+}
