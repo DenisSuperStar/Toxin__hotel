@@ -43,18 +43,10 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (max-width: 959px) {
     .label-input {
         &__data {
-            width: 215px;
-        }
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .label-input {
-        &__data {
-            width: 100%;
+            font-size: 16px;
         }
     }
 }
@@ -62,7 +54,7 @@
 @media screen and (max-width: 959px) {
     .label-input {
         &__data {
-            font-size: 16px;
+            width: 100%;
         }
     }
 }

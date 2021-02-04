@@ -7,11 +7,11 @@
 .header {
     @include flexible(space-between, center);
     padding: 15px 140px;
+    min-width: 350px;
     width: 100%;
     max-width: 1599px;
     height: max-content;
     background: #fff;
-    min-width: 320px;
     transition: all 0.5s ease-in-out;
 }
 

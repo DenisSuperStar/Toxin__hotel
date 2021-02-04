@@ -6,8 +6,15 @@
     transform: scale(0);
 }
 
+/*???*/
 @media screen and (min-width: 1150px) and (max-width: 1599px) {
     .modal-body {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 1399px) {
+    .modal-body {
+        padding: 0;
     }
 }
