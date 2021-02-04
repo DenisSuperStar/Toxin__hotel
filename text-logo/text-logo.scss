@@ -1,19 +1,20 @@
-@mixin flexible($align, $item) {
-    display: flex;
-    justify-content: $align;
-    align-items: $item;
+@mixin slice {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .text-logo {
+    display: block;
     color: #1f2041;
     text-transform: uppercase;
     font-style: normal;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-    width: 48.61px;
-    height: 24px;
-    @include flexible(center, center);
+    width: 50px;
     order: 1;
+    @include slice();
+    z-index: 100;
 }
 
 @media screen and (max-width: 767px) {
