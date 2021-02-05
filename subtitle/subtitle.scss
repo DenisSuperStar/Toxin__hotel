@@ -1,7 +1,6 @@
 
 .subtitle {
     font-family: 'Quicksand', sans-serif;
-    font-family: 'Quicksand', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -14,6 +13,13 @@
     display: flex;
     justify-content: center;
     margin-bottom: 0;
+}
+
+@media screen and (min-width: 1140px) {
+    .subtitle-copy {
+        display: flex;
+        justify-content: flex-start;
+    }
 }
 
 .subtitle-copy__letter {
