@@ -4,9 +4,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  order: 1;
 }
 
 .cm-tooltip--appear {
@@ -14,8 +12,6 @@
 }
 
 .cm-tooltip__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -31,7 +27,6 @@
   top: 0;
   left: 0;
   width: 200px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #bc9cff), to(#8ba4f9));
   background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
   color: #fff;
   font-size: 14px;
@@ -73,33 +68,27 @@
 }
 
 .cm-tooltip--right .cm-tooltip__item.expand:hover::after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 /*the animations*/
 .expand::before {
-  -webkit-transform: scale(0.2, 0.2);
-          transform: scale(0.2, 0.2);
-  -webkit-transition: all 0.3s ease-in-out;
+  transform: scale(0.2, 0.2);
   transition: all 0.3s ease-in-out;
 }
 
 .expand::after {
-  -webkit-transform: scale(0, 0.6);
-          transform: scale(0, 0.6);
-  -webkit-transition: all 0.1s ease;
+  transform: scale(0, 0.6);
   transition: all 0.1s ease;
 }
 
 .expand:hover::before, .expand:hover::after {
   opacity: 1;
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 
 .expand:hover::after {
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+
 /*# sourceMappingURL=tooltip.css.map */

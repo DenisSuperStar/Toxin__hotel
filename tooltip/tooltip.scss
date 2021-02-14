@@ -8,6 +8,9 @@
     &--appear {
         opacity: 1;
     }
+    &__item {
+        display: flex;
+    }
     &__item::before,
     &__item::after {
         position: absolute;
