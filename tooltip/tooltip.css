@@ -81,8 +81,8 @@
 .expand::before {
   -webkit-transform: scale(0.2, 0.2);
           transform: scale(0.2, 0.2);
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .expand::after {

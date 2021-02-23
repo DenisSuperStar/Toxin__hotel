@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="./btn-humburger/humburger.css">
     <link rel="stylesheet" href="./mobile-menu/vertical-menu.css">
     <link rel="stylesheet" href="./site-menu/horizontal-menu.css">
+    <link rel="stylesheet" href="./submenu/submenu.css">
     <link rel="stylesheet" href="./logo/logo.css">
     <link rel="stylesheet" href="./inner_logo/wing.css">
     <link rel="stylesheet" href="./text-logo/text-logo.css">
@@ -43,6 +44,7 @@
     <link rel="stylesheet" href="./sidebar/sidebar.css">
     <link rel="stylesheet" href="./subhead/subhead.css">
     <link rel="stylesheet" href="./select/select.css">
+    <link rel="stylesheet" href="./select/counter.css">
     <link rel="stylesheet" href="./checkbox/checkbox.css">
     <link rel="stylesheet" href="./completebox/completebox.css">
     <link rel="stylesheet" href="./self-price/self-price.css">
@@ -172,13 +174,13 @@
                         <div class="cm-dropdown-menu__item">
                             <div class="cm-dropdown-menu__title">
                                 <div class="cm-dropdown-menu__inner-box">
-                                    <button class="btn btn--mobile btn--sign-in">Войти</button>
+                                    <button class="btn btn--mobile btn--signed-in">Войти</button>
                                 </div>
                             </div>
                         </div>
                         <div class="cm-dropdown-menu__item">
                             <div class="cm-dropdown-menu__title">
-                                <button class="btn btn--mobile btn--sign-up">Зарегистрироваться</button>
+                                <button class="btn btn--mobile btn--signed-up">Зарегистрироваться</button>
                             </div>
                         </div>
                     </div>
@@ -192,7 +194,7 @@
                         </div>
                         <div class="cm-menu__item">
                             <div class="cm-menu__title">
-                                <a class="cm-menu__link">Услуги</a>
+                                <a class="cm-menu__link slide-down">Услуги</a>
                             </div>
                             <div class="submenu">
                                 <ul class="submenu__list">
@@ -216,7 +218,7 @@
                         </div>
                         <div class="cm-menu__item">
                             <div class="cm-menu__title">
-                                <a class="cm-menu__link">Соглашения</a>
+                                <a class="cm-menu__link slide-down">Соглашения</a>
                             </div>
                             <div class="submenu">
                                 <ul class="submenu__list">
@@ -233,10 +235,10 @@
             </div>
             <div class="header__entrance">
                 <div class="header__sign-in">
-                    <button class="btn btn--sign-in" id="short">Войти</button>
+                    <button class="btn btn--signed-in" id="short">Войти</button>
                 </div>
                 <div class="header__sign-up">
-                    <button class="btn btn--sign-up" id="long">Зарегистрироваться</button>
+                    <button class="btn btn--signed-up" id="long">Зарегистрироваться</button>
                 </div>
             </div>
         </header>
@@ -255,7 +257,7 @@
                             <div class="select select--time">
                                 <div class="select__header">
                                   <span class="select__current select__current--time">9 авг - 13 авг</span>
-                                  <div class="select__icon select__icon--time">&times;</div>
+                                  <div class="select__icon select__icon--time"></div>
                                 </div>
                                 <div class="select__body select__body--time close">
                                   <div class="select__item select__item--time">30 июля - 3 авг</div>
@@ -277,7 +279,7 @@
                             <div class="select select--quantitive">
                                 <div class="select__header">
                                   <span class="select__current select__current--quantitive">3 гостя, 1 младенец</span>
-                                  <div class="select__icon select__icon--quantitive">&times;</div>
+                                  <div class="select__icon select__icon--quantitive"></div>
                                 </div>
                                 <div class="select__body select__body--quantitive close">
                                   <div class="select__item select__item--quantitive">1 гость</div>
@@ -411,6 +413,38 @@
                         </div>
                         <div class="sidebar__dropdownbox sidebar__dropdownbox--short">
                             <!-- Компонент для выбора удобства номера -->
+                            <div class="select select--complicated">
+                                <div class="select__header">
+                                    <span class="select__current select__current--rewritable">Какой-то текст</span>
+                                    <div class="select__icon"></div>
+                                </div>
+                                <div class="select__body select__body--all-inclusive close">
+                                    <div class="counter counter--deftop">
+                                        <a class="counter__text counter__text--room-of-rest">спальни</a>
+                                        <div class="counter__button-box">
+                                            <span class="counter__minus dec">-</span>
+                                            <span class="counter__value reset">0</span>
+                                            <span class="counter__plus inc">+</span>
+                                        </div>
+                                    </div>
+                                    <div class="counter counter--defmiddle">
+                                        <a class="counter__text counter__text--room-of-rest">кровати</a>
+                                        <div class="counter__button-box">
+                                            <span class="counter__minus dec">-</span>
+                                            <span class="counter__value reset">0</span>
+                                            <span class="counter__plus inc">+</span>
+                                        </div>
+                                    </div>
+                                    <div class="counter counter--last">
+                                        <a class="counter__text counter__text--room-of-rest">ванные комнаты</a>
+                                        <div class="counter__button-box">
+                                            <span class="counter__minus dec">-</span>
+                                            <span class="counter__value reset">0</span>
+                                            <span class="counter__plus inc">+</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="sidebar__dropdownbox sidebar__dropdownbox--long">
                             <!-- Компонент для выбора доп. услуг -->
@@ -1512,7 +1546,7 @@
                                 </div>
                                 <div class="form__wrapp-has-acc">
                                     <div class="account-yet-text">Уже есть аккаунт на Toxin</div>
-                                    <button type="submit" class="btn btn--sign-in btn--transform is-dialog">Войти</button>
+                                    <button type="submit" class="btn btn--signed-in btn--transform is-dialog">Войти</button>
                                 </div>
                             </div>
                         </form>
@@ -1553,14 +1587,14 @@
                                     </label>
                                 </div>
                                 <div class="form__wrapp-btn">
-                                    <button class="btn btn--sign-up btn--action is-dialog">Войти</button>
+                                    <button class="btn btn--signed-up btn--action is-dialog">Войти</button>
                                     <div class="form__wrapp-btn-icon">
                                         <div class="my-button-icon"></div>
                                     </div>
                                 </div>
                                 <div class="form__wrapp-create-acc">
                                     <div class="account-yet-text">Нет аккаунта на Toxin?</div>
-                                    <button type="submit" class="btn btn--sign-in btn--transform account is-dialog">Создать</button>
+                                    <button type="submit" class="btn btn--signed-in btn--transform account is-dialog">Создать</button>
                                 </div>
                             </div>
                         </form>
@@ -1580,12 +1614,34 @@
         <script src="./header/header.js"></script>
         <!-- Подключение скриптов мобильного меню -->
         <script src="./mobile-menu/vertical-menu.js"></script>
+        <script>
+            const link = document.querySelectorAll('.slide-down');
+            const slides = Array.from(link);
+            for (const slide of slides) {
+                slide.addEventListener('click', function() {
+                    if (this.classList.contains('slide-down')) {
+                        this.classList.remove('slide-down');
+                    } else {
+                        this.classList.add('slide-down');
+                    }
+                    const slide = this.parentElement;
+                    const content = slide.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            }
+        </script>
         <!-- Анимация подзаголовка в Sidebar -->
         <script src="./subhead/subhead.js"></script>
         <!-- Анимация подзаголовка в Контентной области -->
         <script src="./subtitle/subtitle.js"></script>
         <!-- Компонент Select / Dropdown -->
         <script src="./select/select.js"></script>
+        <!-- Компонент Dropdown со счетчиками -->
+        <script src="./select/dropdown_counter.js"></script>
         <!-- Ползунок -->
         <script src="./range-slider/range-slider_js.js"></script>
         <!-- Скрипт анимированного вращения Карт -->
