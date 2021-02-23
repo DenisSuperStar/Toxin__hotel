@@ -66,18 +66,18 @@
   height: 44px !important;
 }
 
-.btn--sign-in, .btn--sign-in:link, .btn--sign-in:visited {
+.btn--signed-in, .btn--signed-in:link, .btn--signed-in:visited {
   width: 87px;
   height: 34px;
   background: #fff;
   border: 2px solid #bc9cff;
 }
 
-.btn--sign-in, .btn--sign-in:link, .btn--sign-in:visited, .btn--sign-in:hover {
+.btn--signed-in, .btn--signed-in:link, .btn--signed-in:visited, .btn--signed-in:hover {
   color: #bc9cff;
 }
 
-.btn--sign-up, .btn--sign-up:link, .btn--sign-up:visited {
+.btn--signed-up, .btn--signed-up:link, .btn--signed-up:visited {
   width: 196px;
   height: 34px;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #bc9cff), to(#8ba4f9));
@@ -85,7 +85,7 @@
   border: none;
 }
 
-.btn--sign-up, .btn--sign-up:link, .btn--sign-up:visited, .btn--sign-up:hover {
+.btn--signed-up, .btn--signed-up:link, .btn--signed-up:visited, .btn--signed-up:hover {
   color: #fff;
 }
 
@@ -99,17 +99,17 @@
 }
 
 @media screen and (max-width: 1149px) {
-  .btn--sign-in:not(.is-dialog),
-  .btn--sign-up:not(.is-dialog) {
+  .btn--signed-in:not(.is-dialog),
+  .btn--signed-up:not(.is-dialog) {
     width: 100%;
     height: 60%;
   }
-  .btn--sign-in:not(.is-dialog),
-  .btn--sign-up:not(.is-dialog) {
+  .btn--signed-in:not(.is-dialog),
+  .btn--signed-up:not(.is-dialog) {
     font-size: 16px;
   }
-  .btn--sign-in.is-dialog,
-  .btn--sign-up.is-dialog {
+  .btn--signed-in.is-dialog,
+  .btn--signed-up.is-dialog {
     font-size: 14px;
   }
 }
