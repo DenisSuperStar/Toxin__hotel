@@ -1,0 +1,102 @@
+.counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(31, 32, 65, 0.25);
+}
+
+.counter__button-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 13px;
+  margin-bottom: 22px;
+}
+
+.counter--last .counter__button-box {
+  margin-bottom: 8px;
+}
+
+.counter__text, .counter__value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  padding-left: 15px;
+  color: #1f2041;
+  text-decoration: none;
+}
+
+.counter__text:hover, .counter__value:hover {
+  color: #8ba4f9;
+  text-decoration: none;
+}
+
+.counter__minus, .counter__plus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 22px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgba(31, 32, 65, 0.5);
+  cursor: pointer;
+}
+
+.counter__minus:focus, .counter__plus:focus {
+  outline: none;
+}
+
+.counter__value {
+  padding: 0;
+  border: none;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 22px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.counter__value:focus {
+  outline: none;
+}
+
+.value-danger {
+  color: rgba(220, 53, 69, 0.5);
+}
+
+.value-primary {
+  color: #8ba4f9;
+}
+/*# sourceMappingURL=counter.css.map */

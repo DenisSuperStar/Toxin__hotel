@@ -1,0 +1,83 @@
+@mixin flexible($align, $item) {
+    display: flex;
+    justify-content: $align;
+    align-items: center;
+}
+
+$active_color_link: #1f2041;
+$no_active_color_link: #8ba4f9;
+
+@mixin colored_link($color) {
+    color: $color;
+    text-decoration: none;
+}
+
+.counter {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.25);
+    &__button-box {
+        display: flex;
+        margin-top: 13px;
+        margin-bottom: 22px;
+    }
+    &--last &__button-box {
+        margin-bottom: 8px;
+    }
+    &__text {
+        @include flexible(center, center);
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        padding-left: 15px;
+        @include colored_link($active_color_link);
+        &:hover {
+            @include colored_link($no_active_color_link);
+        }
+    }
+    &__minus,
+    &__plus {
+        @include flexible(center, center);
+        background: #fff;
+        box-sizing: border-box;
+        border-radius: 22px;
+        width: 30px;
+        height: 30px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        color: rgba(31, 32, 65, 0.5);
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+    }
+    &__value {
+       @extend .counter__text;
+       padding: 0;
+       border: none;
+       background: #fff;
+       box-sizing: border-box;
+       border-radius: 22px;
+       width: 30px;
+       height: 30px;
+       cursor: pointer;
+       &:focus {
+           outline: none;
+       } 
+    }
+}
+
+.value-danger {
+    color: rgba(220, 53, 69, 0.5);
+}
+
+.value-primary {
+    color: #8ba4f9;
+}
