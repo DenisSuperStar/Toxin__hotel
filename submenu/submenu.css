@@ -1,0 +1,47 @@
+.submenu {
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 150px;
+  z-index: 8;
+  border-radius: 22px;
+  background: #fff;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease;
+}
+
+.submenu__list {
+  margin: 0;
+  padding: 20px 0;
+  list-style: none;
+  width: 100%;
+  border-radius: 22px;
+  border: 2px solid #bc9cff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.submenu__item {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+  margin: 0 0 20px;
+}
+
+.submenu__item:last-child {
+  margin: 0;
+}
+/*# sourceMappingURL=submenu.css.map */
