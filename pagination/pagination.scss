@@ -1,0 +1,121 @@
+$selector: 2;
+
+@mixin flexible($align, $item) {
+  display: flex;
+  justify-content: $align;
+  align-items: $item;
+}
+
+.cm-just-pagination {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  &__button {
+    &:nth-child(#{$selector}) {
+      display: flex;
+    }
+    position: relative;
+    @include flexible(center, center);
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    outline: none;
+    border: none;
+    background: #fff;
+    color: rgba(31, 32, 65, 0.5);
+    cursor: pointer;
+    transition: transform 0.15s ease-in-out;
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border: none;
+      opacity: 0.5;
+      transform: scale(1.5, 0.8);
+      transition: transform 0.1s ease-in-out;
+    }
+    &:hover {
+      color: rgba(31, 32, 65, 0.5);
+      text-decoration: none;
+    }
+    &--dots {
+      &::after {
+        @include flexible(center, center);
+        content: '\f141';
+        font-family: 'Font Awesome 5 Pro';
+        width: 40px;
+        height: 40px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
+    &--active {
+      position: relative;
+      display: flex;
+      width: 40px;
+      height: 40px;
+      &::before {
+        position: absolute;
+        content: attr(data-count);
+        @include flexible(center, center);
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+        z-index: 8;
+        background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+        color: #fff;
+        border: none;
+        border-radius: 22px;
+        transform: scale(1);
+        transition: transform 0.25s ease-in-out;
+        cursor: pointer;
+      }
+    }
+    &:last-child {
+      display: flex;
+    }
+  }
+}
+
+.cm-paginator {
+  display: flex;
+  justify-content: center;
+  &__button {
+    @include flexible(center, center);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #6fcf97 0, #66d2ea 100%);
+    border-radius: 22px;
+    color: #fff;
+    text-decoration: none;
+    padding-top: 2px;
+    &::after {
+      content: '\f061';
+      font-family: 'Font Awesome 5 Pro';
+      width: 24px;
+      height: 24px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 20px;
+      color: #fff;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.invisibility {
+  display: none !important;
+}
+
+.visibility {
+  display: flex !important;
+}

@@ -100,6 +100,10 @@
   margin-right: 20px;
 }
 
+.cm-menu__item {
+  position: relative;
+}
+
 .rectangle--in-around {
   border: none;
   display: -webkit-box;
@@ -255,6 +259,22 @@
 
 .forward-list__wrapper {
   padding-bottom: 20px;
+}
+
+.content__paginator-box {
+  padding: 40.94px 0 104.56px;
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1599px) {
+  .content__paginator-box {
+    padding-left: calc(270px * 1.5);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .content__paginator-box {
+    padding-left: calc(270px * 1.8);
+  }
 }
 
 .space, .cm-card-body__relation, .cm-card-body__contain, .field__line {
